@@ -9,7 +9,8 @@ app = Flask(__name__, static_folder='static')
 
 @app.context_processor
 def inject_videos():
-    return {'videos': [filename for filename in os.listdir(os.path.dirname(os.path.abspath(__file__)) + '/static/mp4')]}
+    return {
+        'videos': [filename for filename in os.listdir(os.path.dirname(os.path.abspath(__file__)) + '/static/mp4')]}
 
 
 @app.route('/')

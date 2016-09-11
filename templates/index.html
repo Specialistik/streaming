@@ -19,14 +19,15 @@
     <div class="container">
         <!-- Slider -->
 
-        <div class="row">
+        <div class="row hidden">
             {% for video in videos %}
                 {% if ((loop.index - 1) % 4  == 0) and loop.index != 1 %}
                     </div><div class="row">
                 {% endif %}
                 <div class="col-xs-3">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="/static/mp4/{{ video }}"></iframe>
+                        {#<iframe class="embed-responsive-item" src="/static/mp4/{{ video }}"></iframe>#}
+                        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/8UyMAPr-G44"></iframe>
                     </div>
                 </div>
             {% endfor %}
@@ -37,13 +38,15 @@
             <div class="col-xs-6"></div>
         </div>
 
-        <div class="row hidden">
-            <div class="col-xl-1"></div>
-            <div class="col-xl-2"><img src="{{ url_for('video_feed') }}"></div>
-            <div class="col-xl-2"><img src="{{ url_for('video_feed') }}"></div>
-            <div class="col-xl-2"><img src="{{ url_for('video_feed') }}"></div>
-            <div class="col-xl-2"><img src="{{ url_for('video_feed') }}"></div>
-            <div class="col-xl-2"><img src="{{ url_for('video_feed') }}"></div>
+        <div class="row">
+            <div class="col-xs-1"></div>
+            {% for video_feed in range(25) %}
+                {% if (video_feed % 5  == 0) and video_feed != 1 %}
+                    <div class="col-xs-1"></div></div><div class="row">
+                {% endif %}
+                <div class="col-xs-2"><img src="{{ url_for('video_feed') }}"></div>
+            {% endfor %}
+            </div>
         </div>
 
 
