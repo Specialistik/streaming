@@ -20,9 +20,17 @@
     </nav>
 
     <div class="container-fluid">
-        <video controls>
-            <source src="/static/mp4/Warcraft_trailer2.mp4" type="video/mp4">
-        </video>
+        <div class="container-fluid">
+            <video controls id="main_video">
+                <source src="/static/mp4/Warcraft_trailer2.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="container-fluid">
+            {% foreach video in videos %}
+                <a href="/lolka"><img src="{{ video }}">+</a>
+            {% endfor %}
+        </div>
     </div>
 
 </body>
