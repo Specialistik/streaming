@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import os
-import ffmpy
-import vimeo
+#import ffmpy
+#import vimeo
 from flask import Flask, render_template, Response
 from camera import VideoCamera
 from converter import Converter
