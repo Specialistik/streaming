@@ -18,18 +18,43 @@
             <button type="button" class="btn btn-default navbar-btn">Войти</button>
         </div>
     </nav>
+    <div class="container">
+<!--        <div class="row header">
+            <div class="col-md-1">
+                <div class="col-md-10">
+                    <video id="main_video" class="embed-responsive-item" width="250" height="250">
+                        <source src="/static/mp4/Warcraft_trailer2.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>-->
 
-    <div class="container-fluid">
-        <div class="container-fluid">
-            <video controls id="main_video">
-                <source src="/static/mp4/Warcraft_trailer2.mp4" type="video/mp4">
-            </video>
+
+        <div class="row content">
+            <div class="col-md-1">
+
+            </div>
+
+            <div class="col-md-10 video_wrapper">
+                <!--Тут был код-->
+                    <video controls id="main_video" class="embed-responsive-item" width="250" height="250">
+                        <source src="/static/mp4/Warcraft_trailer2.mp4" type="video/mp4">
+                    </video>
+            </div>
         </div>
 
         <div class="container-fluid">
-            {% foreach video in videos %}
-                <a href="/lolka"><img src="{{ video }}">+</a>
-            {% endfor %}
+            <div class="row footer">
+                {% for video in videos %}
+                    <div class="pic_wrapper col-md-2">
+                        <a href="{{ video.pic_href }}"><img src="{{ video.pic_url }}"></a>
+                    </div>
+                    <div class="col-md-1"></div>
+                    {% if loop.index is divisibleby(4) %}
+                        </div><div class="row">
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 

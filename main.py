@@ -1,27 +1,43 @@
 #!/usr/bin/env python
 
 import os
-#import ffmpy
-#import vimeo
+import cv2
 from flask import Flask, render_template, Response
 from camera import VideoCamera
-from converter import Converter
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder='static')
-video_factory = Converter()
 
 
-def convert(video):
-    video_factory.thumbnail(video, 10, BASE_DIR + video.split('.')[0] + '.png', '320x320')
-    return os.path.join('static', 'mp4', video)
+def convert(video_file):
+    uri = os.path.join(BASE_DIR, 'static/mp4', video_file)
+    cap = cv2.VideoCapture(uri)
+    count = 0
+
+    while cap.isOpened():
+        count += 1
+        ret, frame = cap.read()
+
+        if count > 300:
+            dirty_file_name = video_file.split('.')[0]
+            thumbnail_uri = dirty_file_name + '.png'
+            cv2.imwrite(os.path.join(BASE_DIR, 'static', 'thumbs', thumbnail_uri), frame)
+            return {
+                'pic_url': '/static/thumbs/' + thumbnail_uri,
+                'pic_href': '/static/mp4/' + dirty_file_name + '.mp4'
+            }
+
+    cv2.waitKey(0)
+    cap.release()
+    cv2.destroyAllWindows()
+    return False
 
 
 @app.context_processor
 def inject_videos():
     result_list = []
     for filename in os.listdir(os.path.join(BASE_DIR, 'static', 'mp4')):
-        result_list.append(filename)
+        result_list.append(convert(filename))
     return {'videos': result_list}
 
 

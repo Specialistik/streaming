@@ -30,3 +30,18 @@
     font-size: 35px;
   }
 }
+
+#main-video {
+    padding-bottom:100px;
+}
+
+.pic_wrapper img {
+    width: 250px;
+    height: 200px;
+    float: left;
+    padding: 10px;
+}
+
+.video_wrapper {
+    padding-bottom: 200px;
+}
