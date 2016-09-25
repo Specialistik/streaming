@@ -1,63 +1,31 @@
 $(function(){
-    var myPlayer;
-    videojs("video").ready(function(){
-        myPlayer = this;
-        //myPlayer.play();
-    });
+	//var subcategory = $('.subcategory-tree');
+	//$('.subcategory-tree').remove();
+	var myVideo = document.getElementById("video");
 
     $('.pic_wrapper a').click(function(e){
         var that = this;
         e.preventDefault();
-        myPlayer.src({"src": $(that).attr('href')}).play();
+		$('#video').attr("src", $(that).attr('href'));//.play();
+		myVideo.play();
+       // $('#video').src({"src": $(that).attr('href')}).play();
     });
 
-    // Buttons
-	var playButton = $('#play-pause'); //document.getElementById("play-pause");
-	var muteButton = $('#mute'); //document.getElementById("mute");
-	var fullScreenButton = $("#full-screen");
+	$('#main-cat').click(function(){
 
-	// Sliders
-	var seekBar = $("#seek-bar");
-	var volumeBar = $("#volume-bar");
+	});
 
-	// Event listener for the play/pause button
-	playButton.click(function() {
+/*	$('#play-pause').click(function() {
 		if (myPlayer.paused == true) {
-			// Play the video
 			myPlayer.play();
-
-			// Update the button text to 'Pause'
-			playButton.innerHTML = "Pause";
+			$(this).innerHTML = "Pause";
 		} else {
-			// Pause the video
-			myPlayer.pause();
-
-			// Update the button text to 'Play'
-			playButton.innerHTML = "Play";
+			myPlayer.stop();
+			$(this).innerHTML = "Play";
 		}
 	});
 
-
-	// Event listener for the mute button
-	muteButton.click(function() {
-		if (myPlayer.muted == false) {
-			// Mute the video
-			myPlayer.muted = true;
-
-			// Update the button text
-			muteButton.innerHTML = "Unmute";
-		} else {
-			// Unmute the video
-			myPlayer.muted = false;
-
-			// Update the button text
-			muteButton.innerHTML = "Mute";
-		}
-	});
-
-
-	// Event listener for the full-screen button
-	fullScreenButton.click(function() {
+	$("#full-screen").click(function() {
 		if (myPlayer.requestFullscreen) {
 			myPlayer.requestFullscreen();
 		} else if (myPlayer.mozRequestFullScreen) {
@@ -65,5 +33,26 @@ $(function(){
 		} else if (myPlayer.webkitRequestFullscreen) {
 			myPlayer.webkitRequestFullscreen(); // Chrome and Safari
 		}
-	});
+	});*/
+/*
+    $("#video").addEventListener("timeupdate", function() {
+		var value = (100 / myPlayer.duration) * myPlayer.currentTime;
+		$("#seek-bar").value = value;
+	});*/
+/*
+	$("#seek-bar").mousedown(function() {
+		myPlayer.stop();
+	}).mouseup(function() {
+		myPlayer.play();
+	});*/
+
+	//$('#video').play;
+
+/*	seekBar.addEventListener("mouseup", function() {
+		myPlayer.play();
+	});*/
+
+/*	$('#volume-bar').addEventListener("change", function() {
+		$('#video').volume = volumeBar.value;
+	});*/
 });

@@ -3,37 +3,49 @@
         <meta charset="UTF-8">
         <title>Video Streaming Demonstration</title>
         <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/static/css/video-js.css" rel="stylesheet">
+<!--        <link href="/static/css/video-js.css" rel="stylesheet">-->
         <link href="/static/css/main.css" rel="stylesheet">
 
         <script src="/static/js/jquery-3.1.0.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
-        <script src="/static/js/video.js"></script>
-        <script src="/static/js/main.js"></script>
+<!--        <script src="/static/js/video.js"></script>-->
+
     </head>
 <body>
     <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
+        <div class="container">
             <button type="button" class="btn btn-default navbar-btn">Регистрация</button>
             <button type="button" class="btn btn-default navbar-btn">Войти</button>
         </div>
     </nav>
     <div class="container">
-        <div class="row content" >
-            <div class="col-md-12" id="video-container">
-                <video id="video">
+        <div class="row video-container">
+            <div class="col-md-12" id="">
+                <video id="video" controls>
                     <source src="/static/mp4/Warcraft_trailer2.mp4" type="video/mp4">
                 </video>
-
-                <div id="video-controls">
-                    <button type="button" id="play-pause">Play</button>
-                    <input type="range" id="seek-bar" value="0">
-                    <button type="button" id="mute">Mute</button>
-                    <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-                    <button type="button" id="full-screen">Full-Screen</button>
-                </div>
             </div>
         </div>
+
+        <div class="category-tree">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary main-cat">Категория 1</button>
+                <button type="button" class="btn btn-primary main-cat">Категория 2</button>
+                <button type="button" class="btn btn-primary main-cat">Категория 3</button>
+                <button type="button" class="btn btn-primary main-cat">Категория 4</button>
+                <button type="button" class="btn btn-primary main-cat">Категория 5</button>
+            </div>
+        </div>
+<!--
+        <div class="subcategory-tree">
+            <div class="btn-group">
+                <button type="button" class="btn btn-success sub-cat">Подкатегория 1</button>
+                <button type="button" class="btn btn-success sub-cat">Подкатегория 2</button>
+                <button type="button" class="btn btn-success sub-cat">Подкатегория 3</button>
+                <button type="button" class="btn btn-success sub-cat">Подкатегория 4</button>
+                <button type="button" class="btn btn-success sub-cat">Подкатегория 5</button>
+            </div>
+        </div>-->
 
         <div class="row footer">
             {% for video in videos %}
@@ -47,7 +59,10 @@
                 {% endif %}
             {% endfor %}
         </div>
-    </div>
 
+
+<!--    </div>-->
+    </div>
+    <script src="/static/js/main.js"></script>
 </body>
 </html>

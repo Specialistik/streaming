@@ -1,42 +1,67 @@
-// Modifier class for 1:1 aspect ratio
-.embed-responsive-1by1 {
-  padding-bottom: percentage((1 / 1)); // 100%;
-}
-
-// Modifier class for 4:3 aspect ratio
-.embed-responsive-4by3 {
-  padding-bottom: percentage((3 / 4)); // 75%;
-}
-
-// Modifier class for 16:9 aspect ratio
-.embed-responsive-16by9 {
-  padding-bottom: percentage((9 / 16)); // 56.25%;
-}
-
-// Modifier class for 21:9 aspect ratio
-.embed-responsive-21by9 {
-  padding-bottom: percentage((9 / 21)); // 42.85%;
-}
-
-// Ignore this...
-.container {
-  max-width: 940px;
-}
-
-.jumbotron {
-  margin-top: 10px;
-  padding: 10px 0 25px;
-  h1 {
-    font-size: 35px;
-  }
-}
-
+/*
 #video {
     padding-bottom:100px;
     width: 100%;
     height: auto;
 }
 
+
+
+#video-container {
+	width: 100%;
+	height: auto;
+	position: relative;
+}
+
+#video-controls {
+    float: left;
+	opacity: 0;
+	-webkit-transition: opacity .3s;
+	-moz-transition: opacity .3s;
+	-o-transition: opacity .3s;
+	-ms-transition: opacity .3s;
+	transition: opacity .3s;
+	background-image: linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(3,113,168) 13%, rgb(0,136,204) 100%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.13, rgb(3,113,168)),
+		color-stop(1, rgb(0,136,204))
+	);
+}
+
+#video-container:hover #video-controls {
+	opacity: .9;
+}
+
+button {
+	background: rgba(0,0,0,.5);
+	border: 0;
+	color: #EEE;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+#seek-bar {
+	width: 360px;
+}
+
+#volume-bar {
+	width: 60px;
+}
+*/
 .pic_wrapper img {
     width: 250px;
     height: 200px;
@@ -45,8 +70,22 @@
 }
 
 #video-container {
-	width: 100%;
-	height: auto;
+	padding-bottom: 100px;
+}
+
+.category-tree {
+    text-align: center;
+}
+
+
+.video-container {
+    text-align: center;
+}
+
+/*
+#video-container {
+	width: 640px;
+	height: 365px;
 	position: relative;
 }
 
@@ -102,3 +141,4 @@ button:hover {
 #volume-bar {
 	width: 60px;
 }
+*/
