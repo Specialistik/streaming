@@ -4,9 +4,11 @@ import os
 import cv2
 from flask import Flask, render_template, Response
 from camera import VideoCamera
+from werkzeug.contrib.fixers import ProxyFix
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, static_folder='static')
+app.config.from_object('config')
 
 
 def convert(video_file):
@@ -46,6 +48,16 @@ def index():
     return render_template('index.html')
 
 
+@app.route('/subcategory')
+def category():
+    return render_template('subcategory.html')
+
+
+@app.route('/author')
+def author():
+    return render_template('author.html')
+
+
 def gen(camera):
     while True:
         frame = camera.get_frame()
@@ -59,6 +71,7 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
+app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == '__main__':
     inject_videos()
     app.run(host='0.0.0.0', debug=True)

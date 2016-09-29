@@ -1,0 +1,12 @@
+.center-video {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+}
+
+.pic_wrapper img {
+    width: 250px;
+    height: 200px;
+    float: left;
+    padding: 20px;
+}

@@ -1,68 +1,35 @@
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <title>Video Streaming Demonstration</title>
-        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-<!--        <link href="/static/css/video-js.css" rel="stylesheet">-->
-        <link href="/static/css/main.css" rel="stylesheet">
-
-        <script src="/static/js/jquery-3.1.0.js"></script>
-        <script src="/static/js/bootstrap.min.js"></script>
-<!--        <script src="/static/js/video.js"></script>-->
-
-    </head>
-<body>
-    <nav class="navbar navbar-inverse">
-        <div class="container">
-            <button type="button" class="btn btn-default navbar-btn">Регистрация</button>
-            <button type="button" class="btn btn-default navbar-btn">Войти</button>
+{% extends "main.html" %}
+{% block content %}
+    <div id="category-container">
+        <div class="row">
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg">Категория 1</button></div>
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg ">Категория 2</button></div>
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg ">Категория 3</button></div>
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg ">Категория 4</button></div>
         </div>
-    </nav>
-    <div class="container">
-        <div class="row video-container">
-            <div class="col-md-12" id="">
-                <video id="video" controls>
-                    <source src="/static/mp4/Warcraft_trailer2.mp4" type="video/mp4">
-                </video>
+
+        <div class="row">
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg">Категория 5</button></div>
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg">Категория 6</button></div>
+            <div class="col-md-3 dropdown main-cat">
+                <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown">
+                    Категория 7<span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/subcategory">Подкатегория 1</a></li>
+                    <li><a href="#">Подкатегория 2</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Подкатегория 3</a></li>
+                </ul>
             </div>
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg ">Категория 8</button></div>
         </div>
 
-        <div class="category-tree">
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary main-cat">Категория 1</button>
-                <button type="button" class="btn btn-primary main-cat">Категория 2</button>
-                <button type="button" class="btn btn-primary main-cat">Категория 3</button>
-                <button type="button" class="btn btn-primary main-cat">Категория 4</button>
-                <button type="button" class="btn btn-primary main-cat">Категория 5</button>
-            </div>
+        <div class="row">
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg ">Категория 9</button></div>
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg ">Категория 10</button></div>
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg ">Категория 11</button></div>
+            <div class="col-md-3 main-cat"><button type="button" class="btn btn-primary btn-lg ">Категория 12</button></div>
         </div>
-<!--
-        <div class="subcategory-tree">
-            <div class="btn-group">
-                <button type="button" class="btn btn-success sub-cat">Подкатегория 1</button>
-                <button type="button" class="btn btn-success sub-cat">Подкатегория 2</button>
-                <button type="button" class="btn btn-success sub-cat">Подкатегория 3</button>
-                <button type="button" class="btn btn-success sub-cat">Подкатегория 4</button>
-                <button type="button" class="btn btn-success sub-cat">Подкатегория 5</button>
-            </div>
-        </div>-->
-
-        <div class="row footer">
-            {% for video in videos %}
-                <div class="pic_wrapper col-md-2">
-                    <a href="{{ video.pic_href }}"><img src="{{ video.pic_url }}"></a>
-                </div>
-                <div class="col-md-1"></div>
-                {% if loop.index is divisibleby(4) %}
-                    <div class="col-md-1"></div>
-                    <div class="row">
-                {% endif %}
-            {% endfor %}
-        </div>
-
-
-<!--    </div>-->
     </div>
-    <script src="/static/js/main.js"></script>
-</body>
-</html>
+{% endblock %}
