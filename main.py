@@ -35,17 +35,25 @@ def convert(video_file):
     return False
 
 
+def thumbnail(video_file):
+    dirty_file_name = video_file.split('.')[0]
+    thumbnail_uri = dirty_file_name + '.png'
+    return {
+        'pic_url': '/static/thumbs/' + thumbnail_uri,
+        'pic_href': '/static/mp4/' + dirty_file_name + '.mp4'
+    }
+
 @app.context_processor
 def inject_videos():
     result_list = []
     for filename in os.listdir(os.path.join(BASE_DIR, 'static', 'mp4')):
-        result_list.append(convert(filename))
+        result_list.append(thumbnail(filename))
     return {'videos': result_list}
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('main_page.html')
 
 
 @app.route('/subcategory')
@@ -57,6 +65,23 @@ def category():
 def author():
     return render_template('author.html')
 
+
+@app.route('/video_storage')
+def video_storage():
+    return render_template('left.html')
+
+
+@app.route('/streaming')
+def streaming():
+    return render_template('right.html')
+
+@app.route('/up')
+def up():
+    return render_template('top.html')
+
+@app.route('/down')
+def down():
+    return render_template('bottom.html')
 
 def gen(camera):
     while True:
