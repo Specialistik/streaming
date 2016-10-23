@@ -1,16 +1,35 @@
-.streaming-container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-left: 220px;
+.stream {
+    padding-left: 10px;
+    float: left;
+
 }
 
-.stream {
-    width: 250px;
-    height: 200px;
-    padding-left: 20px;
+.stream img {
+    width: 130px;
+    height: auto;
+}
+
+.stream span {
+    font-size: 40px;
+}
+
+#audio-streaming {
+    width:80%;
+}
+
+.audio-wrapper img {
+    width: 150px;
     float: left;
+    padding: 10px;
+}
+
+.audio-wrapper {
+    float: left;
+    width: 150px;
+    text-align: center;
+}
+
+#audio-screen img{
+    width: 610px;
+    height: 330px;
 }

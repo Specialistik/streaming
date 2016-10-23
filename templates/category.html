@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+{% block head %}
+    <link href="/static/css/category.css" rel="stylesheet">
+    <script src="/static/js/category.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for author in authors %}
+                <div class="pic-wrapper col-md-2">
+                    <a href="/author/{{ author.id }}"><img src="{{ author.image.url }}"></a>
+                    <div class="cat-desc">
+                        <h3>{{ author.name }}</h3>
+                        <p>{{ author.author_deeds }}</p>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary">Buy</button>
+                            <button type="button" class="btn btn-primary">Free</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+                
+                {% if forloop.counter|divisibleby:4 %}
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -13,6 +13,11 @@
     margin: auto;
 }
 
+.arrow img {
+    height: 70px;
+    width: 70px;
+}
+
 .arrow:hover {
     opacity: 1;
 }
@@ -36,3 +41,4 @@
     bottom: 0;
     left: 50%;
 }
+

@@ -1,50 +1,64 @@
 {% extends "main.html" %}
 {% block head %}
     <link href="/static/css/right.css" rel="stylesheet">
+    <script src="/static/js/right.js"></script>
 {% endblock %}
 
 {% block content %}
-    <div class="streaming-container container">
-        <div class="row streaming-row">
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
+    <br><br>
+    
+    <div class="container" style="width:100%;">
+        <div class="row">
+            <div class="col-md-1 col-xs-1"></div>
+            
+            <div class="col-md-5 col-xs-5">
+                <video id="video" class="center-video" controls>
+                    <source id="video-source" src="/static/mp4/StarCraft_Legacy_of_the_Void_Opening_Cinematic.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+            <div class="col-md-5 col-xs-5">
+                <div id="audio-screen">
+                    <img src="/media/6207.jpg">
+                </div>
+                <audio controls="" preload="none" id="audio-streaming" onloadedmetadata="displayData(event)>" crossorigin="anonymous" eq-attached="true">
+                    <source id="audio-player" src="http://stream.radioreklama.bg:80/city.ogg" type="audio/ogg;"><p>Your browser doesn't support HTML audio. Sorry.</p>
+                </audio>
+                <div class="container audio-container">
+
+                    <div class="row">
+                        {% for audio in audio_streams %}
+                            <div class="audio-wrapper" id="{{ audio.stream_source }}">
+                                <a href="{{ audio.stream_source }}">
+                                    <img src="{{ audio.image.url }}">
+                                    {{ audio.title }}
+                                </a>
+                            </div>
+                            {% if forloop.counter|divisibleby:4 %}
+                                </div><br><br><br><div class="row">
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 col-xs-1"></div>
         </div>
 
-        <div class="row streaming-row">
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-        </div>
-
-        <div class="row streaming-row">
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-        </div>
-
-        <div class="row streaming-row">
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-        </div>
-
-        <div class="row streaming-row">
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-            <div class="stream"><img src="/static/images/streaming_fake.png"></div>
-        </div>
+        {% for video_stream_set in video_stream_sets %}
+            <div class="row">
+                <div class="stream"><h1>
+                    <span class="label label-danger video-stream-title" id="{{ video_stream }}">
+                        {{ video_stream_set.title }}
+                    </span>
+                    {% for video in video_stream_set.children %}
+                        <a href="{{ video.stream_source }}">
+                            <img src="{{ video.image.url }}">
+                            {% comment %}<img src="/static/images/streaming_fake.png">{% endcomment %}
+                        </a>
+                    {% endfor %}
+                </h1></div>
+            </div>
+        {% endfor %}
     </div>
-
-    <div class="arrow arrow-left"><a href="/left"><img src="/static/images/arrow_left.png"></a></div>
+    <div class="arrow arrow-left"><a href="/"><img src="/static/images/arrow_left.png"></a></div>
 {% endblock %}

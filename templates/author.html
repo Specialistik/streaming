@@ -1,29 +1,25 @@
 {% extends "main.html" %}
 {% block head %}
-    <script src="/static/js/author.js"></script>
     <link href="/static/css/author.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <div class="row video-container">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <video id="video" class="center-video" controls>
-                <source src="/static/mp4/Warcraft_trailer2.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
+    <video id="video" controls>
+        <source src="/static/mp4/StarCraft_Legacy_of_the_Void_Opening_Cinematic.mp4" type="video/mp4">
+    </video>
 
-    <div class="row">
-        {% for video in videos %}
-            <div class="pic_wrapper col-md-2">
-                <a href="{{ video.pic_href }}"><img src="{{ video.pic_url }}"></a>
-            </div>
-            <div class="col-md-1"></div>
-            {% if loop.index is divisibleby(4) %}
-                <div class="col-md-1"></div></div>
-                <div class="row">
-            {% endif %}
-        {% endfor %}
+    <div class="container">
+        <div class="row">
+            {% for video in videos %}
+                <div class="pic_wrapper col-md-2">
+                    <a href="{{ video.video_url }}"> <img src="/static/images/ch1.jpg">{{ video.title }}</a>
+                </div>
+                <div class="col-md-1"></div>
+                
+                {% if forloop.counter|divisibleby:4 %}
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
