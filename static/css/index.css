@@ -14,3 +14,7 @@ body {
     float: right;
     margin-right: 32px;
 }
+
+.btn {
+    font-size: 18px;
+}
