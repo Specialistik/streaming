@@ -1,3 +1,11 @@
+body {
+    background: url(/static/images/right-back.jpg) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+
 .stream {
     padding-left: 10px;
     float: left;
