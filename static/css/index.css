@@ -1,10 +1,10 @@
-body { 
-    background-image: url('/static/images/main.jpg');
+/*body {
+    background-image: url('/static/images/logo.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center; 
     background-color: #A9A9AB;
-}
+}*/
 
 .index-navbar {
     width: 100%;
