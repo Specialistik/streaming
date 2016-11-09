@@ -24,7 +24,7 @@
                             {% for subcategory in category.children %}
                                 {% if subcategory.has_children %}
                                     <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="/category/{{ subcategory.title }}">{{ subcategory.title }}</a>
+                                        <a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.title }}">{{ subcategory.title }}</a>
                                         <ul class="dropdown-menu">
                                             {% for sub2cat in subcategory.children %}
                                                 <li><a href="/category/{{ sub2cat.id }}">{{ sub2cat.title }}</a></li>

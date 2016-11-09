@@ -9,13 +9,13 @@
         <div class="row">
             {% for author in authors %}
                 <div class="pic-wrapper col-md-2">
-                    <a href="/author/{{ author.id }}"><img src="{{ author.image.url }}"></a>
+                    <a href="/author/{{ author.id }}"><img src="{{ author.image.url }}"><h3>{{ author.name }}</h3></a>
                     <div class="cat-desc">
-                        <h3>{{ author.name }}</h3>
+                        
                         <p>{{ author.author_deeds }}</p>
+                        <h3>{{ author.profession }}</h3>
                         <div class="btn-group">
                             <button type="button" class="btn btn-primary">Buy</button>
-                            <button type="button" class="btn btn-primary">Free</button>
                         </div>
                     </div>
                 </div>

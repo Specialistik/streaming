@@ -44,7 +44,7 @@ class Author(Substance):
     category = models.ForeignKey(VideoCategory, null=True, blank=True, verbose_name=u"Категория")
     name = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"Ник/Имя автора")
     author_deeds = models.TextField(null=True, blank=True, verbose_name=u"Краткое описание")
-    
+    profession = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"profession")    
 
     class Meta:
         db_table = 'authors'
