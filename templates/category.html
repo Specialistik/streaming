@@ -5,10 +5,8 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
             {% for author in authors %}
-                <div class="pic-wrapper col-md-2">
+                <div class="pic-wrapper col-md-3">
                     <a href="/author/{{ author.id }}"><img src="{{ author.image.url }}"><h3>{{ author.name }}</h3></a>
                     <div class="cat-desc">
                         
@@ -19,12 +17,5 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-1"></div>
-                
-                {% if forloop.counter|divisibleby:4 %}
-                    </div><div class="row">
-                {% endif %}
             {% endfor %}
-        </div>
-    </div>
 {% endblock %}

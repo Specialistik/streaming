@@ -18,3 +18,12 @@
 }
 
 
+.pic-wrapper {
+    color: white;
+    padding: 30px;
+    margin: 30px;
+}
+
+.pic-wrapper h3 {
+    color: orange;
+}
