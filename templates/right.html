@@ -7,27 +7,20 @@
 {% block content %}
     <br><br>
     
-    <div class="container" style="width:100%;">
-        <div class="row">
-            <div class="col-md-1 col-xs-1"></div>
-            
-            <div class="col-md-5 col-xs-5">
-                <video id="video" class="center-video" controls>
-                    <source id="video-source" src="/static/mp4/StarCraft_Legacy_of_the_Void_Opening_Cinematic.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
+    <div class="container">
+        <video id="video" class="center-video" controls autoplay>
+             <source id="video-source" src="https://www.youtube.com/embed/XGSy3_Czz8k" type="video/mp4"> 
+        </video>
 
         {% for video_stream_set in video_stream_sets %}
             <div class="row">
-                <div class="stream"><h1>
-                    {% for video in video_stream_set.children %}
+                {% for video in video_stream_set.children %}
+		    <div class="col-md-3 pic-default">
                         <a href="{{ video.stream_source }}">
                             <img src="{{ video.image.url }}">
-                            {% comment %}<img src="/static/images/streaming_fake.png">{% endcomment %}
                         </a>
-                    {% endfor %}
-                </h1></div>
+		    </div>
+                {% endfor %}
             </div>
         {% endfor %}
     </div>

@@ -1,11 +1,3 @@
-/*body {
-    background: url(/static/images/right-back.jpg) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-}*/
-
 .stream {
     padding-left: 10px;
     float: left;
@@ -21,23 +13,16 @@
     font-size: 40px;
 }
 
-#audio-streaming {
-    width:80%;
+.pic-default {
+    padding: 10px; 
 }
 
-.audio-wrapper img {
-    width: 150px;
-    float: left;
-    padding: 10px;
+.pic-default img{
+    width: 230px;
+    height: 150px;
 }
 
-.audio-wrapper {
-    float: left;
-    width: 150px;
-    text-align: center;
-}
-
-#audio-screen img{
-    width: 610px;
-    height: 330px;
+video {
+    width: 95%;
+    height: auto;
 }

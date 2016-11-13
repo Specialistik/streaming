@@ -1,30 +1,34 @@
 #coding: utf-8
 from __future__ import unicode_literals
-
-
-
 import os
 from django.db import models
 from django.conf import settings
-
-#PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
-#os.path.join(BASE_DIR, "static")
+from ckeditor.fields import RichTextField
 
 
 class Substance(models.Model):
     title = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"Заголовок")
     keywords = models.CharField(max_length=20, null=True, blank=True, verbose_name=u"Ключевые слова")
-    description = models.CharField(max_length=200, null=True, blank=True, verbose_name=u"Описание")
-    image = models.ImageField(null=True, blank=True, verbose_name=u"Картинка")
-
-    def __unicode__(self):
-        return self.title
+    #description = models.CharField(max_length=200, null=True, blank=True, verbose_name=u"Описание")
+    description = RichTextField(null=True, blank=True, verbose_name=u"Описание")
+    url = models.CharField(max_length=80, null=True, blank=True, verbose_name=u'Человеко-понятный URL')
     
+    def __repr__(self):
+        return self.title if self.title is not None else u'empty'
+    
+    def __str__(self):
+        return self.title if self.title is not None else u'empty'
+    
+    def __unicode__(self):
+        return self.title if self.title is not None else u'empty'
+ 
     class Meta:
         abstract=True
 
+
 class VideoCategory(Substance):
     pid = models.ForeignKey("self", null=True, blank=True, verbose_name=u"Родительская категория")
+    image = models.ImageField(upload_to='media/category', null=True, blank=True, verbose_name=u"Картинка")
         
     def children(self):
         return VideoCategory.objects.filter(pid=self.id)
@@ -42,9 +46,8 @@ class VideoCategory(Substance):
     
 class Author(Substance):
     category = models.ForeignKey(VideoCategory, null=True, blank=True, verbose_name=u"Категория")
-    name = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"Ник/Имя автора")
-    author_deeds = models.TextField(null=True, blank=True, verbose_name=u"Краткое описание")
     profession = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"profession")    
+    image = models.ImageField(upload_to='media/author', null=True, blank=True, verbose_name=u"Картинка")
 
     class Meta:
         db_table = 'authors'
@@ -55,6 +58,10 @@ class Author(Substance):
 class Video(Substance):
     author = models.ForeignKey(Author, null=True, verbose_name=u"Автор")
     video_url = models.CharField(max_length=256, verbose_name=u"URL видео")
+    image = models.ImageField(upload_to='media/video_pic', null=True, blank=True, verbose_name=u"Картинка")
+
+    def thumb(self):
+	return '/static/images/ch1.jpg'
 
     class Meta:
         db_table = 'videos'
@@ -64,6 +71,7 @@ class Video(Substance):
         
 class VideoStreamSet(Substance):
     
+
     def children(self):
         return VideoStream.objects.filter(stream_set=self.id)
     
@@ -76,7 +84,8 @@ class VideoStreamSet(Substance):
 class VideoStream(Substance):
     stream_set = models.ForeignKey(VideoStreamSet, verbose_name=u"Категория")
     stream_source = models.CharField(max_length=200, verbose_name=u"Источник потокового видео")
-    
+    image = models.ImageField(upload_to='media/video_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
+
     class Meta:
         db_table = 'video_streams'
         verbose_name = u'Потоковое видео'
@@ -85,7 +94,9 @@ class VideoStream(Substance):
     
 class AudioStream(Substance):
     stream_source = models.CharField(max_length=200, verbose_name=u"Источник потокового аудио")
-    
+    image = models.ImageField(upload_to='media/audio_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
+
+
     class Meta:
         db_table = 'audio_streams'
         verbose_name = u'Потоковое аудио'

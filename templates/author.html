@@ -4,22 +4,22 @@
 {% endblock %}
 
 {% block content %}
-    <video id="video" controls>
-        <source src="/static/mp4/StarCraft_Legacy_of_the_Void_Opening_Cinematic.mp4" type="video/mp4">
+    <video id="video" controls autoplay>
+        <source src="https://youtube.com/watch?v=c8fMwMQlFAE">
     </video>
 
     <div class="container">
         <div class="row">
             {% for video in videos %}
-                <div class="pic_wrapper col-md-2">
-                    <a href="{{ video.video_url }}"> <img src="/static/images/ch1.jpg">{{ video.title }}</a>
-                </div>
-                <div class="col-md-1"></div>
-                
-                {% if forloop.counter|divisibleby:4 %}
-                    </div><div class="row">
-                {% endif %}
-            {% endfor %}
-        </div>
+                <div class="col-sm-3 col-xs-3">
+		    <div class="pic-wrapper">
+         		<a href="{{ video.video_url }}"> <img src="{{ video.thumbnail }}">{{ video.title }}</a>
+		    </div>
+		</div>	
+		{% if forloop.counter|divisibleby:4 %}
+		    </div><div class="row">
+		{% endif %}
+	    {% endfor %}
+	</div>
     </div>
 {% endblock %}
