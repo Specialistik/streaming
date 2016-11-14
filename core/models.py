@@ -9,7 +9,6 @@ from ckeditor.fields import RichTextField
 class Substance(models.Model):
     title = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"Заголовок")
     keywords = models.CharField(max_length=20, null=True, blank=True, verbose_name=u"Ключевые слова")
-    #description = models.CharField(max_length=200, null=True, blank=True, verbose_name=u"Описание")
     description = RichTextField(null=True, blank=True, verbose_name=u"Описание")
     url = models.CharField(max_length=80, null=True, blank=True, verbose_name=u'Человеко-понятный URL')
     
@@ -28,7 +27,10 @@ class Substance(models.Model):
 
 class VideoCategory(Substance):
     pid = models.ForeignKey("self", null=True, blank=True, verbose_name=u"Родительская категория")
-    image = models.ImageField(upload_to='media/category', null=True, blank=True, verbose_name=u"Картинка")
+    image = models.ImageField(upload_to='category', null=True, blank=True, verbose_name=u"Картинка")
+
+    def get_url(self):
+	return '/category/' + self.id + '/' + self.url
         
     def children(self):
         return VideoCategory.objects.filter(pid=self.id)
@@ -49,6 +51,9 @@ class Author(Substance):
     profession = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"profession")    
     image = models.ImageField(upload_to='media/author', null=True, blank=True, verbose_name=u"Картинка")
 
+    def get_url(self):
+	return '/author/' + self.id + '/' + self.url
+ 
     class Meta:
         db_table = 'authors'
         verbose_name = u'Автор'
@@ -59,6 +64,10 @@ class Video(Substance):
     author = models.ForeignKey(Author, null=True, verbose_name=u"Автор")
     video_url = models.CharField(max_length=256, verbose_name=u"URL видео")
     image = models.ImageField(upload_to='media/video_pic', null=True, blank=True, verbose_name=u"Картинка")
+
+    def get_url(self):
+	return '/video/' + self.id + '/' + self.url
+ 
 
     def thumb(self):
 	return '/static/images/ch1.jpg'
@@ -84,7 +93,11 @@ class VideoStreamSet(Substance):
 class VideoStream(Substance):
     stream_set = models.ForeignKey(VideoStreamSet, verbose_name=u"Категория")
     stream_source = models.CharField(max_length=200, verbose_name=u"Источник потокового видео")
-    image = models.ImageField(upload_to='media/video_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
+    image = models.ImageField(upload_to='video_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
+
+    def get_url(self):
+	return '/videostream/' + self.id + '/' + self.url
+ 
 
     class Meta:
         db_table = 'video_streams'
@@ -94,9 +107,11 @@ class VideoStream(Substance):
     
 class AudioStream(Substance):
     stream_source = models.CharField(max_length=200, verbose_name=u"Источник потокового аудио")
-    image = models.ImageField(upload_to='media/audio_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
+    image = models.ImageField(upload_to='audio_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
 
-
+    def get_url(self):
+	return '/audiostream/' + self.id + '/' + self.url
+ 
     class Meta:
         db_table = 'audio_streams'
         verbose_name = u'Потоковое аудио'

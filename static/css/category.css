@@ -1,3 +1,7 @@
+body {
+    backgrpund-color: silver;
+}
+
 .pic-wrapper {
     width: 250px;
     text-align: center;
@@ -12,17 +16,5 @@
 
 .cat-desc {
     width: 250px;
-    display: none;
     border: 1px solid black;
-}
-
-
-.pic-wrapper {
-    color: white;
-    padding: 30px;
-    margin: 30px;
-}
-
-.pic-wrapper h3 {
-    color: orange;
 }

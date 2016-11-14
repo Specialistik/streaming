@@ -1,21 +1,20 @@
 {% extends "main.html" %}
 {% block head %}
     <link href="/static/css/category.css" rel="stylesheet">
-    <script src="/static/js/category.js"></script>
+    {% comment %} <script src="/static/js/category.js"></script> {% endcomment %} 
 {% endblock %}
 
 {% block content %}
-            {% for author in authors %}
-                <div class="pic-wrapper col-md-3">
-                    <a href="/author/{{ author.id }}"><img src="{{ author.image.url }}"><h3>{{ author.name }}</h3></a>
-                    <div class="cat-desc">
-                        
-                        <p>{{ author.author_deeds }}</p>
-                        <h3>{{ author.profession }}</h3>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary">Buy</button>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
+    {% for author in authors %}
+	<div class="pic-wrapper col-md-3">
+	    <a href="/author/{{ author.id }}"><img src="{{ author.image.url }}"><h3>{{ author.name }}</h3></a>
+	    <div class="cat-desc">
+		<p>{{ author.author_deeds }}</p>
+		<h3>{{ author.profession }}</h3>
+		<div class="btn-group">
+		    <button type="button" class="btn btn-primary">Buy</button>
+		</div>
+	    </div>
+	</div>
+    {% endfor %}
 {% endblock %}
