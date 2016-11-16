@@ -59,10 +59,9 @@
 </div>
 
 <div class="footer">
-	<a href='#'>part 1 </a>
-	<a href='#'>part 2 </a>
-	<a href='#'>part 3 </a>
-	<a href='#'>part 4 </a>
+    {% for article in articles %}
+	    <a href='{{ article.get_url }}'> {{ article.title }} </a>
+    {% endfor %}
 </div>
 
 

@@ -51,6 +51,7 @@ body {
     width: 250px;
     text-align: center;
     font-size: 20px;
+    color: white;
 }
 
 .pic-wrapper img {
@@ -59,12 +60,6 @@ body {
     float: left;
 }
 
-.pic-wrapper {
-    color: white;
-    padding: 30px;
-    margin: 30px;
-}
-
 .pic-wrapper h3 {
-    color: orange;
+    color: white;
 }

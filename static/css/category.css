@@ -10,11 +10,17 @@ body {
 
 .pic-wrapper img {
     width: 250px;
-    height: 200px;
     float: left;
 }
 
 .cat-desc {
-    width: 250px;
+    width: 252px;
     border: 1px solid black;
+    padding-left: 0; !important;
+    height: 450px;
+}
+
+.cat-desc button {
+    position: relative;
+    bottom: 0;
 }

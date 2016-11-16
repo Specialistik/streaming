@@ -1,10 +1,51 @@
-/*body {
-    background-image: url('/static/images/logo.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
-    background-color: #A9A9AB;
-}*/
+/**
+ * Demo Styles
+ */
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.demo h1 {
+  margin-top: 0;
+}
+
+/**
+ * Footer Styles
+ */
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  overflow: auto;
+  margin: auto;
+}
+
+.footer a {
+    padding: 20px;
+    padding-left: 100px;
+    color: white;
+    font-size: 20px;
+}
 
 .index-navbar {
     width: 100%;
@@ -18,3 +59,6 @@
 .btn {
     font-size: 18px;
 }
+
+
+		

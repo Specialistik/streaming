@@ -6,15 +6,14 @@
 
 {% block content %}
     {% for author in authors %}
-	<div class="pic-wrapper col-md-3">
-	    <a href="/author/{{ author.id }}"><img src="{{ author.image.url }}"><h3>{{ author.name }}</h3></a>
-	    <div class="cat-desc">
-		<p>{{ author.author_deeds }}</p>
+	<div class="pic-wrapper col-md-3 cat-desc">
+	        <h3> {{ author.title }} </h3>
+	        <a href="/author/{{ author.id }}"><img src="{{ author.image.url }}"><h3>{{ author.name }}</h3></a>
 		<h3>{{ author.profession }}</h3>
-		<div class="btn-group">
-		    <button type="button" class="btn btn-primary">Buy</button>
-		</div>
-	    </div>
+		{% autoescape off %}
+		  {{ author.description }}
+		{% endautoescape %}
+		<button type="button" class="btn btn-primary">Buy</button>
 	</div>
     {% endfor %}
 {% endblock %}
