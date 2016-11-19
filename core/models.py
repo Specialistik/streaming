@@ -1,4 +1,5 @@
 #coding: utf-8
+
 from __future__ import unicode_literals
 import os
 from django.db import models
@@ -30,7 +31,7 @@ class VideoCategory(Substance):
     image = models.ImageField(upload_to='category', null=True, blank=True, verbose_name=u"Картинка")
 
     def get_url(self):
-	return '/category/' + self.id + '/' + self.url
+        return '/category/' + str(self.id) + '/' + self.url
 
     def children(self):
         return VideoCategory.objects.filter(pid=self.id)
@@ -52,7 +53,7 @@ class Author(Substance):
     image = models.ImageField(upload_to='media/author', null=True, blank=True, verbose_name=u"Картинка")
 
     def get_url(self):
-	return '/author/' + self.id + '/' + self.url
+        return '/author/' + str(self.id) + '/' + self.url
 
     class Meta:
         db_table = 'authors'
@@ -66,11 +67,10 @@ class Video(Substance):
     image = models.ImageField(upload_to='media/video_pic', null=True, blank=True, verbose_name=u"Картинка")
 
     def get_url(self):
-	return '/video/' + self.id + '/' + self.url
+        return '/video/' + str(self.id) + '/' + self.url
 
-
-    def thumb(self):
-	return '/static/images/ch1.jpg'
+    def get_thumb(self):
+        return '/static/images/ch1.jpg'
 
     class Meta:
         db_table = 'videos'
@@ -79,7 +79,6 @@ class Video(Substance):
 
 
 class VideoStreamSet(Substance):
-
 
     def children(self):
         return VideoStream.objects.filter(stream_set=self.id)
@@ -96,8 +95,7 @@ class VideoStream(Substance):
     image = models.ImageField(upload_to='video_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
 
     def get_url(self):
-	return '/videostream/' + self.id + '/' + self.url
-
+        return '/video_stream/' + str(self.id) + '/' + self.url
 
     class Meta:
         db_table = 'video_streams'
@@ -110,7 +108,7 @@ class AudioStream(Substance):
     image = models.ImageField(upload_to='audio_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
 
     def get_url(self):
-	    return '/audiostream/' + self.id + '/' + self.url
+        return '/audio_stream/' + str(self.id) + '/' + self.url
 
     class Meta:
         db_table = 'audio_streams'

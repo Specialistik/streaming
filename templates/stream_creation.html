@@ -1,10 +1,19 @@
-
 {% extends "main.html" %}
 {% block head %}
-    <link href="/static/css/right.css" rel="stylesheet">
+    <link href="/static/css/stream_creation.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <button type="button" class="btn btn-primary" id="create-video">Создать видео трансляцию</button>
-    <button type="button" class="btn btn-primary" id="create-audio">Создать аудио трансляцию</button>
+	<h1> Создать трансляцию </h1>
+	<div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6">
+                <button id="video_stream" type="button" class="btn btn-primary btn-lg">Создать видеотрансляцию</button>
+            </div>
+
+            <div class="col-xs-6 col-sm-6">
+                <button id="audio_stream" type="button" class="btn btn-primary btn-lg">Создать аудиотрансляцию</button>
+            </div>
+        </div>
+    </div>
 {% endblock %}
