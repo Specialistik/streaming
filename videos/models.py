@@ -30,7 +30,7 @@ class VideoCategory(Substance):
 class Author(Substance):
     category = models.ForeignKey(VideoCategory, null=True, blank=True, verbose_name=u"Категория")
     profession = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"profession")
-    image = models.ImageField(upload_to='media/author', null=True, blank=True, verbose_name=u"Картинка")
+    image = models.ImageField(upload_to='author', null=True, blank=True, verbose_name=u"Картинка")
 
     def get_url(self):
         return '/author/' + str(self.id) + '/' + self.url
@@ -43,14 +43,19 @@ class Author(Substance):
 
 class Video(Substance):
     author = models.ForeignKey(Author, null=True, verbose_name=u"Автор")
-    video_url = models.CharField(max_length=256, verbose_name=u"URL видео")
-    pic = models.ImageField(upload_to='media/video_pic', null=True, blank=True, verbose_name=u"Картинка")
+    video = models.FileField(upload_to='video', verbose_name=u"видео")
+    pic = models.ImageField(upload_to='video_pic', null=True, blank=True, verbose_name=u"Картинка")
 
     def get_url(self):
         return '/video/' + str(self.id) + '/' + self.url
 
     def get_thumb(self):
         return '/static/images/ch1.jpg'
+
+    def save(self, *args, **kw):
+	if ((self.video.lower()[-4:] != '.mp4') or (self.video.lower()[-5:] != '.webm')):
+	    raise Exception('wrong video format')
+	super(Video, self).save(self, *args, **kw)
 
     class Meta:
         db_table = 'videos'
