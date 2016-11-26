@@ -5,24 +5,28 @@
 {% endblock %}
 
 {% block content %}
-    <br><br>
-    
-    <div class="container">
     <video id="video" class="center-video" controls autoplay>
         <source src="/static/video/military.webm" type="video/webm">
     </video>
 
-        {% for video_stream_set in video_stream_sets %}
-            <div class="row">
-                {% for video in video_stream_set.children %}
-		    <div class="col-md-3 pic-default">
-                        <a href="{{ video.stream_source }}">
-                            <img src="{{ video.image.url }}">
+    <div class="container">
+	<div class="row">
+            {% for video_stream_set in video_stream_sets %}
+	        <div class="col-md-3 pic-default">
+                    {% if video_stream_set.has_active_stream %}
+		        <a href="{{ video_stream_set.active_stream }}">
+                            <img src="{{ video_stream_set.pic }}">
                         </a>
-		    </div>
-                {% endfor %}
-            </div>
-        {% endfor %}
+		    {% else %}
+			<img src='/static/images/no_stream.png'>
+		    {% endif %}
+	        </div>
+
+                {% if forloop.counter|divisibleby:4 %}
+                    </div><div class="row">
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
     <div class="arrow arrow-left"><a href="/"><img src="/static/images/arrow_left.png"></a></div>
 {% endblock %}

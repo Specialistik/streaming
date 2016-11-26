@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
     'ckeditor',
+    'core',
+    'videos',
+    'streams'
 ]
 
 CKEDITOR_JQUERY_URL = '/static/js/jquery-3.1.0.js'
