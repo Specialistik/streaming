@@ -24,3 +24,9 @@ def stream_creation(request):
 
 def test(request):
     return render(request, 'test.html')
+
+
+def test_raw(request):
+    return render(request, 'test_raw.html')
+
+

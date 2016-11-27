@@ -19,15 +19,15 @@ class VideoStreamSet(Substance):
 
     class Meta:
         db_table = 'video_stream_sets'
-        verbose_name = u'Stream channel'
-        verbose_name_plural = u'Stream channels'
+        verbose_name = u'Видео канал'
+        verbose_name_plural = u'Видео каналы'
 
 
 class VideoStream(Substance):
     stream_set = models.ForeignKey(VideoStreamSet, verbose_name=u"Категория")
     stream_source = models.CharField(max_length=200, verbose_name=u"Источник потокового видео")
     pic = models.ImageField(upload_to='video_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
-    active = models.BooleanField(default=False, verbose_name=u'active stream within a channel')
+    active = models.BooleanField(default=False, verbose_name=u'Активный стрим')
 
     def get_url(self):
         return '/video_stream/' + str(self.id) + '/' + self.url

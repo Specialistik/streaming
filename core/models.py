@@ -35,4 +35,5 @@ class Article(Substance):
 
     class Meta:
         db_table = 'articles'
-
+	verbose_name = u'Статья'
+        verbose_name_plural = u'Статьи'
