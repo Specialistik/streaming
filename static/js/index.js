@@ -8,4 +8,8 @@ $(function(){
             } else location.href = '/';
         });
     });
+
+    $('#exit').click(function(){
+	location.href = '/admin/logout';
+    });
 });

@@ -6,8 +6,13 @@
 
 {% block content %}
     <nav class="navbar navbar-inverse navbar-right index-navbar">
-<!--        <button type="button" class="btn btn-default navbar-btn">Регистрация</button>-->
-        <button type="button" class="btn btn-default navbar-btn" id='modal-launcher' data-toggle="modal" data-target="#login-modal">Войти</button>
+	{% if user.is_authenticated %}
+	    <button type="button" id='exit'    class="btn btn-default navbar-btn">Выход</button>
+	    <button type="button" id='cabinet' class="btn btn-default navbar-btn">Добро пожаловать, {{ user.username }} </button>
+	    	{% else %}
+            <button type="button" class="btn btn-default navbar-btn">Регистрация</button>
+            <button type="button" class="btn btn-default navbar-btn" id='modal-launcher' data-toggle="modal" data-target="#login-modal">Войти</button>
+        {% endif %}
     </nav>
     
     <div class="arrow arrow-left"><a href="/video_storage"><img src="/static/images/arrow_left.png"></a></div>
