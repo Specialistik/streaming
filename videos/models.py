@@ -41,10 +41,11 @@ class Author(Substance):
         verbose_name_plural = u'Авторы'
 
 
+# todo: thumbs generation for videos
 class Video(Substance):
     author = models.ForeignKey(Author, null=True, verbose_name=u"Автор")
     video = models.FileField(upload_to='video', verbose_name=u"видео")
-    pic = models.ImageField(upload_to='video_pic', null=True, blank=True, verbose_name=u"Картинка")
+    #pic = models.ImageField(upload_to='video_pic', null=True, blank=True, verbose_name=u"Картинка")
 
     def get_url(self):
         return '/video/' + str(self.id) + '/' + self.url
@@ -52,10 +53,10 @@ class Video(Substance):
     def get_thumb(self):
         return '/static/images/ch1.jpg'
 
-    def save(self, *args, **kw):
-	if ((self.video.lower()[-4:] != '.mp4') or (self.video.lower()[-5:] != '.webm')):
-	    raise Exception('wrong video format')
-	super(Video, self).save(self, *args, **kw)
+#    def save(self, *args, **kw):
+#	if ((self.video.name.lower()[-4:] != '.mp4') or (self.video.name.lower()[-5:] != '.webm')):
+#	    raise Exception('wrong video format')
+#	super(Video, self).save(self, *args, **kw)
 
     class Meta:
         db_table = 'videos'

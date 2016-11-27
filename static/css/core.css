@@ -1,0 +1,65 @@
+body {
+    background: url(/static/images/left-back.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#category-container {
+    padding-left: 50px;
+}
+
+.main-cat {
+    padding: 100px 0 0 0;
+}
+
+.arrow {
+    opacity: 0.5;
+    position: absolute;
+    overflow: auto;
+    margin: auto;
+}
+
+.arrow img {
+    height: 70px;
+    width: 70px;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.arrow-left {
+    left: 0;
+    top: 50%;
+}
+
+.arrow-right {
+    right: 0;
+    top: 50%;
+}
+
+.arrow-up {
+    top: 70px;
+    left: 50%;
+}
+
+.arrow-down {
+    bottom: 0;
+    left: 50%;
+}
+
+.pic-wrapper {
+    width: 250px;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+.pic-wrapper img {
+    width: 250px;
+    height: 200px;
+    float: left;
+}
+
+.pic-wrapper h3 {
+    color: white;
+}

@@ -1,3 +1,4 @@
 *.pyc
 /static/ckeditor/*
 /static/admin/*
+/media/*

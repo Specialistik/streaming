@@ -20,3 +20,7 @@ def streaming(request):
 
 def stream_creation(request):
     return render(request, 'stream_creation.html')
+
+
+def test(request):
+    return render(request, 'test.html')
