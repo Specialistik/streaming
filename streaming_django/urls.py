@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', core_views.index),
     url(r'^test_raw$', streams_views.test_raw),
+    url(r'^test_server$', streams_views.test_server),
     url(r'^test$', streams_views.test),
     url(r'^article/([0-9]+)$', core_views.article),
     url(r'^category/([0-9]+)$', videos_views.category),

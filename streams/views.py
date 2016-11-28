@@ -30,3 +30,5 @@ def test_raw(request):
     return render(request, 'test_raw.html')
 
 
+def test_server(request):
+    return render(request, 'test_server.html')
