@@ -3,7 +3,7 @@
 from django.shortcuts import render
 from videos.models import Author, Video, VideoCategory
 
-def category(request, id):
+def category(request, id, url):
     return render(request, 'category.html', {'authors': Author.objects.filter(category=id)})
 
 
