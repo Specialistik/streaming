@@ -57,5 +57,14 @@ body {
     padding-top: 7px;
 }
 
+.user-info {
+   position: absolute;
+   right: 0;
+   top: 70px;
+   width: 350px;
+   display: none;
+}
 
-		
+.user-info .btn-group {
+  width: 100%;
+}

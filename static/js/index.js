@@ -10,6 +10,10 @@ $(function(){
     });
 
     $('#exit').click(function(){
-	location.href = '/admin/logout';
+	    location.href = '/admin/logout';
+    });
+    
+    $('#cabinet').click(function(){
+	    $('.user-info').toggle();
     });
 });
