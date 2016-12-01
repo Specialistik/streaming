@@ -30,6 +30,11 @@ body {
   text-align: center;
   overflow: auto;
   margin: auto;
+  height: 63px;
+  background-color: black;
+  border-style: solid;
+  border-width: 3px;
+  border-color: gray;
 }
 
 .footer a {

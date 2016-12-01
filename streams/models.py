@@ -12,10 +12,10 @@ class VideoStreamSet(Substance):
         return VideoStream.objects.filter(stream_set=self.id)
 
     def has_active_stream(self):
-	return (VideoStream.objects.filter(stream_set=self.id, active=True).exists())
+	    return (VideoStream.objects.filter(stream_set=self.id, active=True).exists())
 
     def active_stream(self):
-	return VideoStream.objects.get(stream_set=self.id, active=True).stream_source
+	    return VideoStream.objects.get(stream_set=self.id, active=True).stream_source
 
     class Meta:
         db_table = 'video_stream_sets'

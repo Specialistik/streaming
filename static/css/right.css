@@ -17,12 +17,14 @@
     padding: 10px; 
 }
 
-.pic-default img{
+.pic-default img { 
     width: 230px;
     height: 150px;
+    padding: 15px;
 }
 
-video {
-    width: 95%;
-    height: auto;
+#video {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
 }

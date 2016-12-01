@@ -10,18 +10,14 @@
     </video>
 
     <div class="container">
-	<div class="row">
+    	<div class="row">
             {% for video_stream_set in video_stream_sets %}
-	        <div class="col-md-3 pic-default">
-                    {% if video_stream_set.has_active_stream %}
-		        <a href="{{ video_stream_set.active_stream }}">
-                            <img src="{{ video_stream_set.pic }}">
-                        </a>
-		    {% else %}
-			<img src='/static/images/no_stream.png'>
-		    {% endif %}
-	        </div>
-
+                <div class="col-xs-3 col-sm-3 pic-default stream">
+                    <a href="{{ video_stream_set.active_stream }}">
+                        <img src="/media/{{ video_stream_set.pic }}">
+                    </a>
+                </div>
+    
                 {% if forloop.counter|divisibleby:4 %}
                     </div><div class="row">
                 {% endif %}

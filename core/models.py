@@ -8,10 +8,10 @@ from ckeditor.fields import RichTextField
 
 
 class Substance(models.Model):
-    title = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"Заголовок")
-    keywords = models.CharField(max_length=20, null=True, blank=True, verbose_name=u"Ключевые слова")
+    title = models.CharField(max_length=80, verbose_name=u"Заголовок")
+    keywords = models.CharField(max_length=256, null=True, blank=True, verbose_name=u"Ключевые слова")
     description = RichTextField(null=True, blank=True, verbose_name=u"Описание")
-    url = models.CharField(max_length=80, null=True, blank=True, verbose_name=u'Человеко-понятный URL')
+    url = models.CharField(max_length=80, verbose_name=u'Человеко-понятный URL')
 
     def __repr__(self):
         return self.title if self.title is not None else u'empty'

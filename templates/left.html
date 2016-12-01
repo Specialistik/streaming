@@ -15,7 +15,7 @@
                 <div class="col-md-2">
                     <div class="dropdown">
                         <a role="button" data-toggle="dropdown" class="btn btn-default btn-lg btn-block" 
-                            data-target="#{{ category.id }}" href="/category/{{ category.id }}" id="menu{{ category.id }}">
+                            data-target="#{{ category.id }}" href="/category/{{ category.id }}/{{ category.url }}" id="menu{{ category.id }}">
                             {{ category.title }} {% if category.has_children %} <span class="caret"></span> {% endif %}
                         </a>
                         {% if category.has_children %}
@@ -23,15 +23,15 @@
                             {% for subcategory in category.children %}
                                 {% if subcategory.has_children %}
                                     <li class="dropdown-submenu">
-                                        <a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.title }}">{{ subcategory.title }}</a>
+                                        <a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a>
                                         <ul class="dropdown-menu">
                                             {% for sub2cat in subcategory.children %}
-                                                <li><a href="/category/{{ sub2cat.id }}">{{ sub2cat.title }}</a></li>
+                                                <li><a href="/category/{{ sub2cat.id }}/{{ sub2cat.url }}">{{ sub2cat.title }}</a></li>
                                 	        {% endfor %}
                                         </ul>
                                     </li>
                                 {% else %}
-                                    <li><a tabindex="-1" href="/category/{{ subcategory.id }}">{{ subcategory.title }}</a></li>
+                                    <li><a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a></li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="col-md-1"></div>
                 {% if forloop.counter|divisibleby:4 %}
-                    </div><br><br><br><br><br><br><br><div class="row">
+                    </div><div class="row">
                 {% endif %}
             {% endfor %}
     	</div>
