@@ -1,4 +1,4 @@
-﻿var ws;
+var ws;
 
 this.onmessage = function (e) {
   switch (e.data.command) {

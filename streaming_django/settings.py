@@ -1,3 +1,5 @@
+#coding: utf-8
+
 """
 Django settings for streaming_django project.
 
@@ -81,13 +83,9 @@ WSGI_APPLICATION = 'streaming_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
+# TODO: придумать быстрый свитчер между бд с миграцией данных
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',

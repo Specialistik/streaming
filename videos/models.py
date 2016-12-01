@@ -8,7 +8,6 @@ from core.models import Substance
 
 class VideoCategory(Substance):
     pid = models.ForeignKey("self", null=True, blank=True, verbose_name=u"Родительская категория")
-    image = models.ImageField(upload_to='category', null=True, blank=True, verbose_name=u"Картинка")
 
     def get_url(self):
         return '/category/' + str(self.id) + '/' + self.url
@@ -28,9 +27,9 @@ class VideoCategory(Substance):
 
 
 class Author(Substance):
-    category = models.ForeignKey(VideoCategory, null=True, blank=True, verbose_name=u"Категория")
-    profession = models.CharField(max_length=80, null=True, blank=True, verbose_name=u"Профессия")
-    image = models.ImageField(upload_to='author', null=True, blank=True, verbose_name=u"Фото")
+    category = models.ForeignKey(VideoCategory, verbose_name=u"Категория")
+    profession = models.CharField(max_length=80, verbose_name=u"Профессия")
+    image = models.ImageField(upload_to='author', verbose_name=u"Фото")
 
     def get_url(self):
         return '/author/' + str(self.id) + '/' + self.url
@@ -43,7 +42,7 @@ class Author(Substance):
 
 # todo: thumbs generation for videos
 class Video(Substance):
-    author = models.ForeignKey(Author, null=True, verbose_name=u"Автор")
+    author = models.ForeignKey(Author, verbose_name=u"Автор")
     video = models.FileField(upload_to='video', verbose_name=u"Видео")
 
     def get_url(self):

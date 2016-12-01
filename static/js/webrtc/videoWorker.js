@@ -1,4 +1,3 @@
-﻿
 var ws;
 function dataURItoView(dataURI) {
   // convert base64 to raw binary data held in a string

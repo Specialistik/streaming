@@ -1,13 +1,13 @@
 {% extends 'main.html' %}
 
 {% block head %}
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<script src="/static/js/webrtc/adapter.js" type="text/javascript"></script>
-<script src="/static/js/webrtc/audioWorker.js" type="text/javascript"></script>
-<script src="/static/js/webrtc/videoWorker.js"  type="text/javascript"></script>
-<script src="/static/js/webrtc/WSAudioRecorder.js" type="text/javascript"></script>
-<script src="/static/js/webrtc/WSVideoRecorder.js" type="text/javascript"></script>
-<script src="/static/js/webrtc/main.js" type="text/javascript"></script>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<script src="/static/js/webrtc/adapter.js" type="text/javascript"></script>
+	<script src="/static/js/webrtc/audioWorker.js" type="text/javascript"></script>
+	<script src="/static/js/webrtc/videoWorker.js"  type="text/javascript"></script>
+	<script src="/static/js/webrtc/WSAudioRecorder.js" type="text/javascript"></script>
+	<script src="/static/js/webrtc/WSVideoRecorder.js" type="text/javascript"></script>
+	<script src="/static/js/webrtc/main.js" type="text/javascript"></script>
 {% endblock %}
 
 {% block content %}
@@ -15,6 +15,6 @@
 	<button type="button" id="btnMedia">Start Stream</button>
 	<button type="button" id="btnRecVideo">RecordVideo</button>
 	<button type="button" id="btnRecAudio">RecordAudio</button>
-	<input type="hidden" id="audioWSURL" value="ws://127.0.0.1:9000"></input>
+	<input type="hidden" id="audioWSURL" value="http://127.0.0.1:9000"></input>
 	<input type="hidden" id="videoWSURL" value="ws://127.0.0.1:9002"></input>
 {% endblock %}

@@ -6,7 +6,7 @@ from django.db import models
 from core.models import Substance
 
 class VideoStreamSet(Substance):
-    pic = models.ImageField(upload_to='video_stream_set_pic', null=True, blank=True, verbose_name=u"Картинка")
+    pic = models.ImageField(upload_to='video_stream_set_pic', verbose_name=u"Картинка")
 
     def children(self):
         return VideoStream.objects.filter(stream_set=self.id)
