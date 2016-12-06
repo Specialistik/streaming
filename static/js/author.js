@@ -1,7 +1,6 @@
 $(function(){
-	$('#video').play();
-
     $('.pic-wrapper a').click(function(e){
+    
         var that = this;
         e.preventDefault();
         console.log($('#video'));
@@ -9,9 +8,9 @@ $(function(){
         $('video').play();
     });
     
-    $('.audio-img').click(function(e) {
-        var that = this;
-        e.preventDefault();
-        console.log($(this).parent().attr('id'));
+    $('.pic-wrapper').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
     });
 });
