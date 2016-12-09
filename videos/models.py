@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from core.models import Substance
+from core.models import Substance, Status
 
 
 class VideoCategory(Substance):
@@ -30,6 +30,7 @@ class Author(Substance):
     category = models.ForeignKey(VideoCategory, verbose_name=u"Категория")
     profession = models.CharField(max_length=80, verbose_name=u"Профессия")
     image = models.ImageField(upload_to='author', verbose_name=u"Фото")
+    status = models.ForeignKey(Status, verbose_name=u'status')
 
     def get_url(self):
         return '/author/' + str(self.id) + '/' + self.url

@@ -28,6 +28,8 @@ class VideoStream(Substance):
     stream_source = models.CharField(max_length=200, verbose_name=u"Источник потокового видео")
     pic = models.ImageField(upload_to='video_stream_pic', null=True, blank=True, verbose_name=u"Картинка")
     active = models.BooleanField(default=False, verbose_name=u'Активный стрим')
+    time_start = models.DateTimeField(null=True, blank=True, verbose_name=u'stream start time')
+    time_end = models.DateTimeField(null=True, blank=True, verbose_name=u'stream end time')
 
     def get_url(self):
         return '/video_stream/' + str(self.id) + '/' + self.url

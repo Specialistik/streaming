@@ -26,8 +26,6 @@ class Substance(models.Model):
         abstract=True
 
 
-
-
 class Article(Substance):
 
     def get_url(self):
@@ -37,3 +35,19 @@ class Article(Substance):
         db_table = 'articles'
 	verbose_name = u'Статья'
         verbose_name_plural = u'Статьи'
+
+
+class Status(models.Model):
+    name = models.CharField(max_length=20, verbose_name=u'status')
+
+    def __repr__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+	db_table = 'statuses'
