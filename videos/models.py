@@ -30,7 +30,7 @@ class Author(Substance):
     category = models.ForeignKey(VideoCategory, verbose_name=u"Категория")
     profession = models.CharField(max_length=80, verbose_name=u"Профессия")
     image = models.ImageField(upload_to='author', verbose_name=u"Фото")
-    status = models.ForeignKey(Status, verbose_name=u'status')
+    status = models.ForeignKey(Status, verbose_name=u'Уровень доступа')
 
     def get_url(self):
         return '/author/' + str(self.id) + '/' + self.url

@@ -1,0 +1,1 @@
+[{"model": "core.status", "pk": 1, "fields": {"name": "free"}}, {"model": "core.status", "pk": 2, "fields": {"name": "bronze"}}, {"model": "core.status", "pk": 3, "fields": {"name": "silver"}}, {"model": "core.status", "pk": 4, "fields": {"name": "gold"}}]

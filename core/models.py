@@ -33,12 +33,12 @@ class Article(Substance):
 
     class Meta:
         db_table = 'articles'
-	verbose_name = u'Статья'
+        verbose_name = u'Статья'
         verbose_name_plural = u'Статьи'
 
 
 class Status(models.Model):
-    name = models.CharField(max_length=20, verbose_name=u'status')
+    name = models.CharField(max_length=20, verbose_name=u'Название')
 
     def __repr__(self):
         return self.name
@@ -50,4 +50,7 @@ class Status(models.Model):
         return self.name
 
     class Meta:
-	db_table = 'statuses'
+       db_table = 'statuses'
+       verbose_name = u'Уровень доступа'
+       verbose_name_plural = u'Уровни доступа'
+
