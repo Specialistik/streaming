@@ -8,6 +8,7 @@
     border: 1px solid black;
     padding: 0; !important;
     height: 450px;
+    background-color: black;
     color: white;
     margin: 3%;
     text-align: center;
@@ -30,4 +31,25 @@
 .author-description {
     height: 120px;
     overflow-y: auto;
+}
+
+.status {
+    margin: 4px;
+    padding: 3px;
+}
+
+.free {
+    background-color: white;
+}
+
+.bronze {
+    background-color: bronze;
+}
+
+.silver {
+    background-color: silver;
+}
+
+.gold {
+    background-color: yellow;
 }

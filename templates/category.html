@@ -9,9 +9,9 @@
 		    {% for author in authors %}
 				<div class="col-xs-2 cat-desc">
 					<div class="author-header">
-				        <h5> {{ author.title }} </h5>
+				        <h3> {{ author.title }} </h3>
 				        <a href="/author/{{ author.id }}"><img src="{{ author.image.url }}"><h3>{{ author.name }}</h3></a>
-						<h5>{{ author.profession }}</h5>
+						<h3>{{ author.profession }}</h3>
 					</div>
 					
 					<div class="author-description">
@@ -21,7 +21,7 @@
 					</div>
 					
 					<div class="author-footer">
-						<p><span class="label label-warning">Silver</span></p>
+						<p><span class="{{ author.status }} status label">{{ author.status }}</span></p>
 						<p><button type="button" class="btn btn-danger btn-sm">Получить доступ</button></p>
 					</div>
 				</div>

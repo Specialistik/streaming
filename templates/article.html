@@ -1,11 +1,19 @@
 {% extends "main.html" %}
+
+{% block meta %}
+   <title> {{ article.title }} </title> 
+{% endblock %} 
+
 {% block head %}
     <link href="/static/css/article.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-	<h1> {{ article.title }}
-	{% autoescape off %}
-	  {{ author.description }}
-	{% endautoescape %}
+	<h1> {{ article.title }} </h1>
+	
+	<div class="article-content">
+    	{% autoescape off %}
+    	  {{ article.description }}
+    	{% endautoescape %}
+	</div>
 {% endblock %}

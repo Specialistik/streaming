@@ -24,6 +24,22 @@ class Substance(models.Model):
 
     class Meta:
         abstract=True
+        
+        
+class List(models.Model):
+    name = models.CharField(max_length=100, verbose_name=u'Название')
+
+    def __repr__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        abstract=True
 
 
 class Article(Substance):
@@ -37,20 +53,15 @@ class Article(Substance):
         verbose_name_plural = u'Статьи'
 
 
-class Status(models.Model):
-    name = models.CharField(max_length=20, verbose_name=u'Название')
-
-    def __repr__(self):
-        return self.name
-
-    def __str__(self):
-        return self.name
-
-    def __unicode__(self):
-        return self.name
-
+class Status(List):
     class Meta:
        db_table = 'statuses'
        verbose_name = u'Уровень доступа'
        verbose_name_plural = u'Уровни доступа'
-
+       
+       
+class Profession(List):
+    class Meta:
+       db_table = 'professions'
+       verbose_name = u'Профессия'
+       verbose_name_plural = u'Профессии'
