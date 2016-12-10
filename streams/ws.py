@@ -1,21 +1,38 @@
-#coding: utf-8
 
-from tornado import web
-from tornadio2 import SocketConnection, TornadioRouter, SocketServer
+# Import standard modules.
+import sys
+import base64
+import StringIO
 
-class WSConnection(SocketConnection):
-    def on_message(self, msg):
-	print 'message received'
-
-    def on_open(self, args):
-	print 'connection established'
-
-    def on_close(self):
-	print 'connection closed'
+# Import 3rd-party modules.
+from tornado import websocket, web, ioloop
+import numpy
+import coils
 
 
-def start_tornado(port):
-    router = TornadioRouter(WSConnection)
-    app = web.Application(router.urls, socket_io_port = port)
-    SocketServer(app)
+class IndexHandler(web.RequestHandler):
+    def get(self):
+        self.render('index.html')
+
+class SocketHandler(websocket.WebSocketHandler):
+    def __init__(self, *args, **kwargs):
+        super(SocketHandler, self).__init__(*args, **kwargs)
+
+        # Client to the socket server.
+        self._map_client = coils.MapSockClient('127.0.0.1', 9002, encode=False)
+
+        # Monitor the framerate at 1s, 5s, 10s intervals.
+        self._fps = coils.RateTicker((1,5,10))
+
+    def on_message(self, message):
+        response = self._map_client.send(coils.MapSockRequest('get', 'image'))
+        sio = StringIO.StringIO(response)
+        image = numpy.load(sio)
+        image = base64.b64encode(image)
+        self.write_message(image)
+
+        # Print object ID and the framerate.
+        text = '{} {:.2f}, {:.2f}, {:.2f} fps'.format(id(self), *self._fps.tick())
+        print(text)
+
 

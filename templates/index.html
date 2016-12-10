@@ -8,28 +8,21 @@
 {% block content %}
     <nav class="navbar navbar-inverse navbar-right index-navbar">
 	{% if user.is_authenticated %}
-		    <button type="button" id='exit'    class="btn btn-default navbar-btn">Выход</button>
 		    <button type="button" id='cabinet' class="btn btn-default navbar-btn dropdown-toggle">Добро пожаловать, {{ user.username }} </button>
 		</nav>
 		<div class='user-info'>
 			<img src="/static/images/user-pic-default.jpg">
 			<div class="btn-group">
-				{% comment %}
-				<button type="button" class="btn btn-primary">Личный кабинет</button>
-				<button type="button" class="btn btn-primary">Сообщения</button>
-				{% endcomment %}
-				<a href='/account'>my account</a>
-				<a href='/exit'>exit</a>
+				<button action="/my_account"type="button" class="btn btn-primary">Личный кабинет</button>
+				<button action="/my_messages" type="button" class="btn btn-primary">Сообщения</button>
 			</div>
 			
 			<div class="btn-group">
-				
 				<button type="button" class="btn btn-primary">Доступ</button>
 				<button type="button" class="btn btn-primary">Инфо</button>
 			</div>
 		</div>
 	{% else %}
-	        <button type="button" class="btn btn-default navbar-btn">Регистрация</button>
 	        <button type="button" class="btn btn-default navbar-btn" id='modal-launcher' data-toggle="modal" data-target="#login-modal">Войти</button>
     	</nav>
     {% endif %}
