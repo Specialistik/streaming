@@ -1,3 +1,4 @@
+#coding: utf-8
 
 # Import standard modules.
 import sys
@@ -19,7 +20,7 @@ class SocketHandler(websocket.WebSocketHandler):
         super(SocketHandler, self).__init__(*args, **kwargs)
 
         # Client to the socket server.
-        self._map_client = coils.MapSockClient('127.0.0.1', 9002, encode=False)
+        self._map_client = coils.MapSockClient('0.0.0.0', 9002, encode=False)
 
         # Monitor the framerate at 1s, 5s, 10s intervals.
         self._fps = coils.RateTicker((1,5,10))
