@@ -11,19 +11,15 @@ body {
 }
 
 .arrow {
-    opacity: 0.5;
+/*    opacity: 0.5;*/
     position: absolute;
     overflow: auto;
     margin: auto;
 }
 
 .arrow img {
-    height: 70px;
-    width: 70px;
-}
-
-.arrow:hover {
-    opacity: 1;
+    width: 200px;
+    height: 120px;
 }
 
 .arrow-left {
