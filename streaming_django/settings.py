@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'core',
     'videos',
-    'streams'
+    'streams',
+    'abstract_crm',
 ]
 
 CKEDITOR_JQUERY_URL = '/static/js/jquery-3.1.0.js'

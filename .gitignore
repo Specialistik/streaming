@@ -1,6 +1,5 @@
 *.pyc
 /static/ckeditor/*
 /static/admin/*
-/media/*
 .idea/*
 .settings/*

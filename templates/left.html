@@ -1,6 +1,8 @@
 {% extends "main.html" %}
 {% block head %}
     <link href="/static/css/left.css" rel="stylesheet">
+
+    <script src="/static/js/left.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -31,7 +33,7 @@
                                         </ul>
                                     </li>
                                 {% else %}
-                                    <li><a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a></li>
+                                    <li class="childless"><a tabindex="-1" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a></li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
