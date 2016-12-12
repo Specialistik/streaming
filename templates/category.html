@@ -7,17 +7,17 @@
     <div class="container">
 	<div class="row">
 	    {% for author in authors %}
-		<div class="col-xs-2 cat-desc">
+		<div class="col-xs-3 cat-desc">
 		    <div class="author-header">
-               	        <h3> {{ author.title }} </h3>
+       	        <h2> {{ author.title }} </h2>
 		        <a href="/author/{{ author.id }}">
-			    <img src="{{ author.image.url }}"><h3>{{ author.name }}</h3>
+			    <img src="{{ author.image.url }}">
 			</a>
-			<h3>{{ author.profession }}</h3>
+			<h4>{{ author.profession }}</h4>
 	  	</div>
 					
 		<div class="author-description">
-                    {% autoescape off %}
+            {% autoescape off %}
 		        {{ author.description }}
 		    {% endautoescape %}
 		</div>

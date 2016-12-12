@@ -19,6 +19,10 @@
     height: 165px;
 }
 
+.author-header h2 {
+    color: yellow;
+}
+
 .author-footer {
     position: absolute;
     bottom: 0;
@@ -28,14 +32,19 @@
     right: 0;
 }
 
+.author-footer .btn-warning {
+    color: black;
+}
+
 .author-description {
     height: 120px;
     overflow-y: auto;
 }
 
 .status {
-    margin: 4px;
-    padding: 3px;
+    margin: 6px;
+    padding: 6px;
+    color: black;
 }
 
 .free {
@@ -43,7 +52,7 @@
 }
 
 .bronze {
-    background-color: bronze;
+    background-color: #CD7F32;
 }
 
 .silver {
@@ -51,5 +60,5 @@
 }
 
 .gold {
-    background-color: yellow;
+    background-color: #ffd700;
 }

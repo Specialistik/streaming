@@ -8,4 +8,16 @@ $(function(){
             } else location.href = '/';
         });
     });
+    
+    $('.arrow-left').hover(function() {
+        $(this).find('img').attr('src', "/static/images/arrow_left_hover.png");
+    }, function() {
+        $(this).find('img').attr('src', "/static/images/arrow_left.png");
+    });
+    
+    $('.arrow-right').hover(function() {
+        $(this).find('img').attr('src', "/static/images/arrow_right_hover.png");
+    }, function() {
+        $(this).find('img').attr('src', "/static/images/arrow_right.png");
+    });
 });

@@ -11,15 +11,14 @@ body {
 }
 
 .arrow {
-/*    opacity: 0.5;*/
     position: absolute;
     overflow: auto;
     margin: auto;
 }
 
 .arrow img {
-    width: 200px;
-    height: 120px;
+    width: 100px;
+    height: 60px;
 }
 
 .arrow-left {
