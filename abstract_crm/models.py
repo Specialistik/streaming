@@ -20,7 +20,13 @@ class TaskStatus(List):
        db_table = 'task_statuses'
        verbose_name = u'Статус задачи'
        verbose_name_plural = u'Статусы задач'
-
+       
+       
+class Priority(List):
+    class Meta:
+       db_table = 'priorities'
+       verbose_name = u'Приоритет'
+       verbose_name_plural = u'Приоритеты'
 
 
 class Task(models.Model):
