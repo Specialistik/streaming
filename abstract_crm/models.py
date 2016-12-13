@@ -8,11 +8,21 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 from core.models import List
 
+
 class Project(List):
     class Meta:
        db_table = 'projects'
        verbose_name = u'Проект'
        verbose_name_plural = u'Проекты'
+
+
+class Tracker(List):
+    project = models.ForeignKey(Project, verbose_name=u"Проект")
+    
+    class Meta:
+       db_table = 'trackers'
+       verbose_name = u'Отдел'
+       verbose_name_plural = u'Отделы'
 
 
 class TaskStatus(List):
@@ -32,9 +42,13 @@ class Priority(List):
 class Task(models.Model):
     title = models.CharField(max_length=80, verbose_name=u"Заголовок")
     description = RichTextField(verbose_name=u"Описание")
-    project = models.ForeignKey(Project, verbose_name=u'Проект') 
+    project = models.ForeignKey(Project, default=1, verbose_name=u'Проект')
+    tracker = models.ForeignKey(Tracker, null=True, blank=True, verbose_name=u'Направление (отдел)')
+    pid = models.ForeignKey('self', null=True, blank=True, verbose_name=u'Родительская задача')
     user = models.ForeignKey(User, verbose_name=u'Пользователь') 
-    status = models.ForeignKey(TaskStatus, verbose_name=u"Статус")
+    status = models.ForeignKey(TaskStatus, default=1, verbose_name=u"Статус")
+    priority = models.ForeignKey(Priority, default=1, verbose_name=u"Приоритет")
+
     time_creation = models.DateTimeField(default=datetime.now(), verbose_name=u'Время создания')
     time_end = models.DateTimeField(null=True, blank=True, verbose_name=u'Время завершения')
 
