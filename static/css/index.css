@@ -17,17 +17,12 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-.demo h1 {
-  margin-top: 0;
-}
-
 .footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1rem;
-  text-align: center;
   overflow: auto;
   margin: auto;
   height: 63px;
@@ -39,8 +34,6 @@ body {
 
 .footer a {
     padding: 20px 20px 20px 100px;
-    color: white;
-    font-size: 20px;
 }
 
 .index-navbar {
@@ -71,7 +64,7 @@ body {
 
 .user-info img {
     width: 192px;
-    height: 200px;
+    height: 120px;
     -webkit-border-radius: 15px 15px 15px 15px;
     -moz-border-radius: 15px 15px 15px 15px;
     border-radius: 15px 15px 15px 15px;
@@ -88,14 +81,11 @@ body {
 }
 
 .user-info .btn {
-    padding-left: 2px;
-    padding-right: 2px;
+    width: 192px;
+    color: #FFA700;
+    background-color: black;
 }
 
-.user-info #account {
-    width: 65%;
-}
-
-.user-info #logout {
-    width: 35%;
+.user-info .btn:hover {
+    color: #FFFC00;
 }

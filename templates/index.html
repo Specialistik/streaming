@@ -12,8 +12,10 @@
 		</nav>
 		<div class='user-info'>
 		    <img src="/static/images/user-pic-default.jpg">
-		    <div class="btn-group">
-			<button id="account"type="button" class="btn btn-primary">Личный кабинет</button>
+		    <div class="btn-group-vertical">
+			<button id="profile"type="button" class="btn btn-primary">Личный кабинет</button>
+			<button id="account"type="button" class="btn btn-primary">Аккаунт</button>
+	
 			<button id="logout" type="button" class="btn btn-primary">Выйти</button>
 		    </div>
 		</div>
@@ -23,8 +25,8 @@
     {% endif %}
     
     
-    <div class="arrow arrow-left"><a href="/video_storage"><img src="/static/images/arrow_left.png"></a></div>
-    <div class="arrow arrow-right"><a href="/streaming"><img src="/static/images/arrow_right.png"></a></div>
+<div class="arrow arrow-left"><a href="/video_storage"><i class="fa fa-arrow-circle-left fa-lg"></i>  Видео</a></div>
+    <div class="arrow arrow-right"><a href="/streaming">Трансляции  <i class="fa fa-arrow-circle-right fa-lg"></i></a></div>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">

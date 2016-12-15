@@ -2,13 +2,7 @@
     padding: 3%;
     margin: 2%;
     background-color: black;
-    color: white;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
-}
-
-h1, h2, h3, h4 {
-    text-align: center;
-    color: yellow;
 }

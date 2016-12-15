@@ -1,5 +1,5 @@
 body {
-    background-color: #3914af;
+    background-color: #3515B0;
 }
 
 #category-container {
@@ -16,9 +16,19 @@ body {
     margin: auto;
 }
 
-.arrow img {
-    width: 100px;
-    height: 60px;
+.arrow a, .footer a {
+    text-decoration: none;
+    color: #FFA700;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.arrow a:hover, {
+    color: #FFFC00; 
+}
+
+.footer a:hover {
+    color: #FFFC00; 
 }
 
 .arrow-left {
@@ -45,7 +55,6 @@ body {
     width: 250px;
     text-align: center;
     font-size: 20px;
-    color: white;
 }
 
 .pic-wrapper img {
@@ -54,6 +63,18 @@ body {
     float: left;
 }
 
-.pic-wrapper h3 {
-    color: white;
+h1, h2, h3, h4 {
+    color: #FFFC00;
+    font-weight: bold; 
+}
+
+.btn {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 20px;
+    font-weight: 900;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+
 }
