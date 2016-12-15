@@ -8,19 +8,14 @@
 {% block content %}
     <nav class="navbar navbar-inverse navbar-right index-navbar">
 	{% if user.is_authenticated %}
-		    <button type="button" id='cabinet' class="btn btn-default navbar-btn dropdown-toggle">Добро пожаловать, {{ user.username }} </button>
+		    <button type="button" id='cabinet' class="btn btn-default navbar-btn dropdown-toggle"> {{ user.username }} </button>
 		</nav>
 		<div class='user-info'>
-			<img src="/static/images/user-pic-default.jpg">
-			<div class="btn-group">
-				<button action="/my_account"type="button" class="btn btn-primary">Личный кабинет</button>
-				<button action="/my_messages" type="button" class="btn btn-primary">Сообщения</button>
-			</div>
-			
-			<div class="btn-group">
-				<button type="button" class="btn btn-primary">Доступ</button>
-				<button type="button" class="btn btn-primary">Инфо</button>
-			</div>
+		    <img src="/static/images/user-pic-default.jpg">
+		    <div class="btn-group">
+			<button id="account"type="button" class="btn btn-primary">Личный кабинет</button>
+			<button id="logout" type="button" class="btn btn-primary">Выйти</button>
+		    </div>
 		</div>
 	{% else %}
 	        <button class="btn btn-default navbar-btn" id='modal-launcher' data-toggle="modal" data-target="#login-modal">Войти</button>

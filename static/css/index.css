@@ -59,12 +59,43 @@ body {
 
 .user-info {
    position: absolute;
-   right: 0;
-   top: 70px;
-   width: 350px;
+   right: 20px;
+   top: 52px;
+   width: 192px;
    display: none;
 }
 
 .user-info .btn-group {
-  width: 100%;
+    width: 192px;
+}
+
+.user-info img {
+    width: 192px;
+    height: 200px;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+#cabinet {
+    width: 192px;
+    text-align: center;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+    background-color: white;
+    color: black;
+}
+
+.user-info .btn {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.user-info #account {
+    width: 65%;
+}
+
+.user-info #logout {
+    width: 35%;
 }
