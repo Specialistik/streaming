@@ -21,6 +21,8 @@ urlpatterns = [
     url(r'^author/([0-9]+)$', videos_views.author),
     url(r'^video_storage$', videos_views.video_storage),
     url(r'^streaming$', streams_views.streaming),
+    url(r'^account$', core_views.account),
+    url(r'^profile$', core_views.profile),
     url(r'^stream_creation$', streams_views.stream_creation),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
