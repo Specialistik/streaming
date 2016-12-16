@@ -1,77 +1,10 @@
 {% extends "main.html" %}
-{% block head %}
-    <link href="/static/css/index.css" rel="stylesheet">
-
-    <script src="/static/js/index.js"></script>
-{% endblock %}
 
 {% block content %}
-    <nav class="navbar navbar-inverse navbar-right index-navbar">
-	{% if user.is_authenticated %}
-		    <button type="button" id='cabinet' class="btn btn-default navbar-btn dropdown-toggle"> {{ user.username }} </button>
-		</nav>
-		<div class='user-info'>
-		    <img src="/static/images/user-pic-default.jpg">
-		    <div class="btn-group-vertical">
-			<button id="profile"type="button" class="btn btn-primary">Личный кабинет</button>
-			<button id="account"type="button" class="btn btn-primary">Аккаунт</button>
-	
-			<button id="logout" type="button" class="btn btn-primary">Выйти</button>
-		    </div>
-		</div>
-	{% else %}
-	        <button class="btn btn-default navbar-btn" id='modal-launcher' data-toggle="modal" data-target="#login-modal">Войти</button>
-    	</nav>
-    {% endif %}
     
     
 <div class="arrow arrow-left"><a href="/video_storage"><i class="fa fa-arrow-circle-left fa-lg"></i>  Видео</a></div>
     <div class="arrow arrow-right"><a href="/streaming">Трансляции  <i class="fa fa-arrow-circle-right fa-lg"></i></a></div>
-
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-    	<div class="modal-content">
-      		<div class="modal-body login-modal">
-      			<p>Anima - это платформа для обучающих видео, призванная помочь тем, кто желает развиваться в творчестве и не только</p>
-      			<br/>
-      			<div class="clearfix"></div>
-      			<div id='social-icons-conatainer'>
-	        		<div class='modal-body-left'>
-	        			<div class="form-group">
-		              		<input type="text" id="username" placeholder="Ваша почта" value="" class="form-control login-field">
-		              		<i class="fa fa-user login-field-icon"></i>
-		            	</div>
-
-		            	<div class="form-group">
-		            	  	<input type="password" id="login-pass" placeholder="Пароль" value="" class="form-control login-field">
-		              		<i class="fa fa-lock login-field-icon"></i>
-		            	</div>
-
-		            	<a href="#" class="btn btn-primary modal-login-btn">Войти</a>
-		            	<a href="#" class="login-link text-center">Забыли пароль?</a>
-	        		</div>
-
-	        		<div class='modal-body-right'>
-	        			<div class="modal-social-icons">
-	        				<a href='#' class="btn btn-default facebook"> <i class="fa fa-facebook modal-icons"></i> Войти через Facebook </a>
-	        				<a href='#' class="btn btn-default twitter"> <i class="fa fa-twitter modal-icons"></i> Войти через Twitter </a>
-	        				<a href='#' class="btn btn-default google"> <i class="fa fa-google-plus modal-icons"></i> Войти через Google+ </a>
-	        				<a href='#' class="btn btn-default linkedin"> <i class="fa fa-vk modal-icons"></i> Войти через VK</a>
-	        			</div>
-	        		</div>
-	        		<div id='center-line'> ИЛИ </div>
-	        	</div>
-        		<div class="clearfix"></div>
-
-        		<div class="form-group modal-register-btn">
-        			<button class="btn btn-default">Зарегистрироваться</button>
-        		</div>
-      		</div>
-      		<div class="clearfix"></div>
-            </div>
-    	</div>
-    </div>
-</div>
 
 <div class="footer">
     {% for article in articles %}

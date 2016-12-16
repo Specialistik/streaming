@@ -9,6 +9,10 @@ html *
 
 body {
     background-color: #3515B0;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
 }
 
 #video {
@@ -87,4 +91,48 @@ h1, h2, h3, h4 {
     -webkit-border-radius: 15px 15px 15px 15px;
     -moz-border-radius: 15px 15px 15px 15px;
     border-radius: 15px 15px 15px 15px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  overflow: auto;
+  margin: auto;
+  height: 63px;
+  background-color: black;
+}
+
+.footer a {
+    padding: 20px 20px 20px 100px;
+}
+
+.index-navbar {
+    width: 100%;
+}
+
+.index-navbar button {
+    float: right;
+    margin-right: 32px;
+}
+
+.btn {
+
+    padding-top: 7px;
+}
+
+.user-info {
+   position: absolute;
+   right: 20px;
+   top: 52px;
+   width: 192px;
+   display: none;
 }
