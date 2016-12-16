@@ -1,5 +1,19 @@
+html *
+{
+    font-size: 16px;
+    font-weight: 700;
+    -webkit-border-radius: 15px 15px 15px 15px;
+    -moz-border-radius: 15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
+}
+
 body {
     background-color: #3515B0;
+}
+
+#video {
+    display: block;
+    margin: 0 auto;
 }
 
 #category-container {
@@ -19,11 +33,9 @@ body {
 .arrow a, .footer a {
     text-decoration: none;
     color: #FFA700;
-    font-weight: 900;
-    font-size: 20px;
 }
 
-.arrow a:hover, {
+.arrow a:hover {
     color: #FFFC00; 
 }
 
@@ -54,7 +66,6 @@ body {
 .pic-wrapper {
     width: 250px;
     text-align: center;
-    font-size: 20px;
 }
 
 .pic-wrapper img {
@@ -71,10 +82,9 @@ h1, h2, h3, h4 {
 .btn {
     padding-left: 2px;
     padding-right: 2px;
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 700;
     -webkit-border-radius: 15px 15px 15px 15px;
     -moz-border-radius: 15px 15px 15px 15px;
     border-radius: 15px 15px 15px 15px;
-
 }
