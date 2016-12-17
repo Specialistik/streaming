@@ -42,43 +42,6 @@ body {
 }
 
 .btn {
-
     padding-top: 7px;
 }
 
-.user-info {
-   position: absolute;
-   right: 20px;
-   top: 52px;
-   width: 192px;
-   display: none;
-}
-
-.user-info .btn-group {
-    width: 192px;
-}
-
-.user-info img {
-    width: 192px;
-    height: 120px;
-    -webkit-border-radius: 15px 15px 15px 15px;
-    -moz-border-radius: 15px 15px 15px 15px;
-    border-radius: 15px 15px 15px 15px;
-}
-
-#cabinet {
-    width: 192px;
-    text-align: center;
-    background-color: white;
-    color: black;
-}
-
-.user-info .btn {
-    width: 192px;
-    color: #FFA700;
-    background-color: black;
-}
-
-.user-info .btn:hover {
-    color: #FFFC00;
-}

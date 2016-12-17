@@ -7,11 +7,11 @@
         {% endblock %} 
 
         <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
+		<link href="/static/css/style.css" rel="stylesheet" />
         <link href="/static/css/core.css" rel="stylesheet">
-        <link rel="stylesheet" href="/static/css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="/static/css/style.css" />
 
-	<script src="/static/js/modernizr-2.6.2.min.js"></script>
+		<script src="/static/js/modernizr-2.6.2.min.js"></script>
         <script src="/static/js/jquery-3.1.0.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
         <script src="/static/js/arrows.js"></script>
@@ -22,30 +22,29 @@
         {% endblock %}
     </head>
 <body>
-    <div class="content">
-        <nav class="navbar navbar-inverse navbar-right index-navbar">
+<div class="content">
+    <nav class="navbar navbar-inverse navbar-right index-navbar">
 	{% if user.is_authenticated %}
-		    <button type="button" id='cabinet' class="btn btn-default navbar-btn dropdown-toggle"> {{ user.username }} </button>
+		    <button type="button" id="cabinet" class="btn btn-default cabinet navbar-btn dropdown-toggle"> {{ user.username }} </button>
 		</nav>
 		<div class='user-info'>
 		    <img src="/static/images/user-pic-default.jpg">
 		    <div class="btn-group-vertical">
-			<button id="profile"type="button" class="btn btn-primary">Личный кабинет</button>
-			<button id="account"type="button" class="btn btn-primary">Аккаунт</button>
-	
-			<button id="logout" type="button" class="btn btn-primary">Выйти</button>
+				<button id="profile" type="button" class="btn">Личный кабинет</button>
+				<button id="account" type="button" class="btn">Аккаунт</button>
+				<button id="logout" type="button" class="btn">Выйти</button>
 		    </div>
 		</div>
 	{% else %}
-	        <button class="btn btn-default navbar-btn" id='modal-launcher' data-toggle="modal" data-target="#login-modal">Войти</button>
+	        <button class="btn btn-default navbar-btn cabinet" id='modal-launcher' data-toggle="modal" data-target="#login-modal">Войти</button>
     	</nav>
     {% endif %}
- 
-        {% block content %}
 
-        {% endblock %}
+    {% block content %}
 
-    </div>
+    {% endblock %}
+</div>
+    
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
     	<div class="modal-content">
