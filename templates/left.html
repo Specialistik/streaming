@@ -25,23 +25,22 @@
                             {% for subcategory in category.children %}
                                 {% if subcategory.has_children %}
                                     <li class="dropdown-submenu">
-                                        <a tabindex="-1" class="btn btn-block' href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a>
+                                        <a tabindex="-1" class="btn" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a>
                                         <ul class="dropdown-menu">
                                             {% for sub2cat in subcategory.children %}
-                                                <li><a class="btn btn-block" href="/category/{{ sub2cat.id }}/{{ sub2cat.url }}">{{ sub2cat.title }}</a></li>
+                                                <li><a class="btn" href="/category/{{ sub2cat.id }}/{{ sub2cat.url }}">{{ sub2cat.title }}</a></li>
                                 	        {% endfor %}
                                         </ul>
                                     </li>
                                 {% else %}
-                                    <li class="childless"><a tabindex="-1" class="btn btn-block" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a></li>
+                                    <li class="childless"><a tabindex="-1" class="btn btn" href="/category/{{ subcategory.id }}/{{ subcategory.url }}">{{ subcategory.title }}</a></li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
                         {% endif %}
                     </div>
                 </div>
-                <div class="col-md-1"></div>
-                {% if forloop.counter|divisibleby:4 %}
+                {% if forloop.counter|divisibleby:5 %}
                     </div><div class="row">
                 {% endif %}
             {% endfor %}

@@ -67,7 +67,6 @@
     border-radius: 15px 15px 15px 15px;
 }
 
-
 .container a.btn:hover {
     color: white;
     background-color: black;
@@ -78,7 +77,16 @@
     background-color: black;
 }
 
+.container ul>li:hover {
+    color: white;
+    background-color: black;
+}
+
 .dropdown-menu>li>a {
     padding: 0 20px;
+}
+
+.container .row {
+    padding-bottom: 85px;
 }
 

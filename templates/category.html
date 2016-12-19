@@ -9,7 +9,7 @@
 	    {% for author in authors %}
 		<div class="col-xs-3 cat-desc">
 		    <div class="author-header">
-       	        <h4> {{ author.title }} </h4>
+       	        	<h2> {{ author.title }} </h2>
 		        <a href="/author/{{ author.id }}">
 			    <img src="{{ author.image.url }}">
 			</a>
@@ -17,7 +17,7 @@
 	  	</div>
 					
 		<div class="author-description">
-            {% autoescape off %}
+            	    {% autoescape off %}
 		        {{ author.description }}
 		    {% endautoescape %}
 		</div>
