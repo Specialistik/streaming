@@ -24,6 +24,7 @@
 <body>
 <div class="content">
     <nav class="navbar navbar-inverse navbar-right index-navbar">
+	<a href='/'> <img height="60" width="60" src='/static/images/logo.png'> </a>
 	{% if user.is_authenticated %}
 		    <button type="button" id="cabinet" class="btn btn-default cabinet navbar-btn dropdown-toggle"> {{ user.username }} </button>
 		</nav>
