@@ -1,11 +1,14 @@
 html *
 {
-    font-size: 20px;
+
+    font-size: 16px;
     font-weight: 700;
+
     -webkit-border-radius: 15px 15px 15px 15px;
     -moz-border-radius: 15px 15px 15px 15px;
     border-radius: 15px 15px 15px 15px;
 }
+
 
 body {
     background-color: #1435AD;
@@ -86,8 +89,10 @@ h1, h2, h3, h4 {
 .btn {
     padding-left: 2px;
     padding-right: 2px;
-    font-size: 20px;
+
+    font-size: 16px;
     font-weight: 700;
+
     -webkit-border-radius: 15px 15px 15px 15px;
     -moz-border-radius: 15px 15px 15px 15px;
     border-radius: 15px 15px 15px 15px;
@@ -179,4 +184,9 @@ h1, h2, h3, h4 {
 
 .navbar-right {
     margin-right: 0;
+}
+
+.modal-register-btn .btn {
+    padding-left: 12px;
+    padding-right: 12px;
 }

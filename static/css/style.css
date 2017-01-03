@@ -20,12 +20,12 @@ body{
 }
 .login_modal_header, .login_modal_footer {background: #00BB64 !important;color:#fff;}
 .modal-register-btn{margin: 4% 33% 2% 33% ;width:100%;}
-.login-modal input{height:40px; box-shadow: none; border:1px solid #ddd;}
-.modal-body-left{float:left; width:50%; padding-right:4%; border-right:4px solid #ddd;}
+.login-modal input{box-shadow: none; border:1px solid #ddd; padding: 0; padding-left:12px}
+.modal-body-left{float:left; width:43%;}
 .modal-body-right{float:right; width:47%;}
 .login-link{padding:0 20%;}
 .modal-social-icons{padding:0 10%;}
-.facebook, .twitter, .google, .linkedin {width:100%;height:40px; padding-top:2%; margin-top:2%;}
+.facebook, .twitter, .google, .linkedin {width:100%; padding-top:2%; margin-top:2%;}
 .modal-icons{margin-left: -10px; margin-right: 20px;}
 .google, .google:hover{background-color:#dd4b39;border:2px solid #dd4b39;color:#fff;}
 .twitter, .twitter:hover{ background-color: #00aced; border:2px solid #00aced;color: #fff;}
@@ -33,5 +33,5 @@ body{
 .linkedin, .linkedin:hover{background-color: #007bb6; border: 2px solid #007bb6; color:#fff;}
 #social-icons-conatainer{position: relative;}
 #center-line{position: absolute;  right: 265.7px;top: 80px;background:#ddd;  border: 4px solid #DDDDDD;border-radius: 20px;}
-.modal-login-btn{width:100%;height:40px; margin-bottom:10px;}
+.modal-login-btn{width:100%; margin-bottom:10px;}
 
