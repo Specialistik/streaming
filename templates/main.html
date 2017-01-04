@@ -79,11 +79,44 @@
         		<div class="clearfix"></div>
 
         		<div class="form-group modal-register-btn">
-        			<button class="btn btn-default modal-register-btn">Зарегистрироваться</button>
+        			<button class="btn btn-default" data-toggle="modal" data-target="#register-modal">Регистрация</button>
         		</div>
       		</div>
       		<div class="clearfix"></div>
             </div>
+    	</div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+    	<div class="modal-content">
+      		<div class="modal-body register-modal">
+				<div class="form-group">
+					<input type="text" id="username" placeholder="Имя пользователя" value="" class="form-control username-field">
+				</div>
+
+				<div class="form-group">
+					<input type="password" id="password" placeholder="Пароль" value="" class="form-control password-field">
+				</div>
+			
+				<div class="form-group">
+					<input type="password" id="confirm-password" placeholder="Подтверждение пароля" value="" class="form-control confirmation-field">
+				</div>
+				
+				<div class="form-group">
+					<input type="email" id="email" placeholder="Почта" value="" class="form-control email-field">
+				</div>
+				
+				<div class="form-group">
+					<input type="phone" id="phone" placeholder="Телефон" value="" class="form-control username-field">
+				</div>
+
+        		<div class="form-group modal-register-btn">
+        			<button class="btn btn-default" type="submit" id="register-oldschool">Зарегистрироваться</button>
+        		</div>
+			</div>
     	</div>
     </div>
 </div>

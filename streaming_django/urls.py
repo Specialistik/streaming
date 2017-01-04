@@ -20,6 +20,7 @@ urlpatterns = [
 #url(r'^category/([0-9]+)$', videos_views.category),
     url(r'^author/([0-9]+)$', videos_views.author),
     url(r'^video_storage$', videos_views.video_storage),
+    url(r'^video_storage/([0-9]+)$', videos_views.video_storage),
     url(r'^streaming$', streams_views.streaming),
     url(r'^account$', core_views.account),
     url(r'^profile$', core_views.profile),
