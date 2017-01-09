@@ -4,6 +4,7 @@ import os
 from django.db import models
 from django.conf import settings
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 
 class Substance(models.Model):
@@ -64,3 +65,17 @@ class Profession(List):
        db_table = 'professions'
        verbose_name = u'Профессия'
        verbose_name_plural = u'Профессии'
+       
+       
+#class Profile(models.Model):
+#    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=u'Пользователь')
+#    phone = models.CharField(max_length=30, verbose_name=u'Телефон')
+
+#	class Meta:
+#       db_table = 'profile'
+#       verbose_name = u'Профиль пользователя'
+#       verbose_name_plural = u'Профили пользователя'
+       
+       
+       
+ 
