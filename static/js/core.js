@@ -16,4 +16,13 @@ $(function(){
     $('#cabinet').click(function(){
 	    $('.user-info').toggle();
     });
+
+    $('#profile').click(function(){
+	location.href = '/profile';
+    });
+
+    $('#account').click(function(){
+	location.href = '/account';
+    });
+
 });

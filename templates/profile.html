@@ -1,14 +1,58 @@
 {% extends "main.html" %}
 
-{% block meta %}
-{% endblock %} 
-
 {% block head %}
     <link href="/static/css/profile.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-	<h1> Profile </h1>
-    	{% autoescape off %}
-    	{% endautoescape %}
+    <h2>Личный кабинет </h2>
+    <div class="container">
+		<div class="row">
+			<div class="profile-left col-xs-4">
+				<h2>Профиль</h2>
+					<img src="/static/images/user-pic-default.jpg" class="img-responsive">
+					<div class="form-group">
+						<input type="text" id="username" placeholder="Имя пользователя" value="" class="form-control username-field">
+					</div>
+
+					<div class="form-group">
+						<input type="password" id="password" placeholder="Пароль" value="" class="form-control password-field">
+					</div>
+				
+					<div class="form-group">
+						<input type="email" id="email" placeholder="Почта" value="" class="form-control email-field">
+					</div>
+					
+					<div class="form-group">
+						<input type="phone" id="phone" placeholder="Телефон" value="" class="form-control username-field">
+					</div>
+
+					<div class="form-group">
+						<button class="btn btn-default" type="submit" id="save-profile">Сохранить изменения</button>
+					</div>
+			</div>
+			
+			<div class="profile-right col-xs-7">
+				<h2>Статус</h2>
+				<div class="row">
+					<div class="col-xs-3">
+						<h4>Bronze</h4>
+					</div>
+					
+					<div class="col-xs-3">
+						<h4>Silver</h4>
+					</div>
+					
+					<div class="col-xs-3">
+						<h4>Gold</h4>
+					</div>
+				</div>
+				
+				<h2>Подписки</h2>
+				
+			</div>
+		</div>
+    </div>	
+    {% autoescape off %}
+    {% endautoescape %}
 {% endblock %}

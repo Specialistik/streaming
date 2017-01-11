@@ -1,0 +1,20 @@
+h2 {
+	color: #FF4900;
+	text-align: center;
+}
+
+.profile-left img {
+	padding-bottom: 15px;
+}
+
+.profile-left input {
+	padding: 0;
+}
+
+.profile-left .btn {
+	text-align: center;
+}
+
+.profile-right h4 {
+	text-align: center;
+}

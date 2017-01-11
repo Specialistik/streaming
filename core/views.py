@@ -13,11 +13,11 @@ def article(request, id):
     return render(request, 'article.html', {'article': Article.objects.get(pk=id)})
 
 
-def account(request, id):
+def account(request):
     return render(request, 'account.html')
 
 
-def profile(request, id):
+def profile(request):
     return render(request, 'profile.html')
 
 
