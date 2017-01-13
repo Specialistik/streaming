@@ -93,29 +93,32 @@
 	<div class="modal-dialog">
     	<div class="modal-content">
       		<div class="modal-body register-modal">
-				<div class="form-group">
-					<input type="text" id="username" placeholder="Имя пользователя" value="" class="form-control username-field">
-				</div>
+				<form id="register-form" method="POST">
+					{% csrf_token %}
+					<div class="form-group">
+						<input type="text" name="username" placeholder="Имя пользователя" value="" class="form-control username-field">
+					</div>
 
-				<div class="form-group">
-					<input type="password" id="password" placeholder="Пароль" value="" class="form-control password-field">
-				</div>
-			
-				<div class="form-group">
-					<input type="password" id="confirm-password" placeholder="Подтверждение пароля" value="" class="form-control confirmation-field">
-				</div>
+					<div class="form-group">
+						<input type="password" name="password" placeholder="Пароль" value="" class="form-control password-field">
+					</div>
 				
-				<div class="form-group">
-					<input type="email" id="email" placeholder="Почта" value="" class="form-control email-field">
-				</div>
-				
-				<div class="form-group">
-					<input type="phone" id="phone" placeholder="Телефон" value="" class="form-control username-field">
-				</div>
+					<div class="form-group">
+						<input type="password" name="confirm-password" placeholder="Подтверждение пароля" value="" class="form-control confirmation-field">
+					</div>
+					
+					<div class="form-group">
+						<input type="email" name="email" placeholder="Почта" value="" class="form-control email-field">
+					</div>
+					
+					<div class="form-group">
+						<input type="phone" name="phone" placeholder="Телефон" value="" class="form-control username-field">
+					</div>
 
-        		<div class="form-group modal-register-btn">
-        			<button class="btn btn-default" type="submit" id="register-oldschool">Зарегистрироваться</button>
-        		</div>
+					<div class="form-group modal-register-btn">
+						<button class="btn btn-default" id="register-oldschool">Зарегистрироваться</button>
+					</div>
+        		</form>
 			</div>
     	</div>
     </div>

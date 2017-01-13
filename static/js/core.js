@@ -18,11 +18,28 @@ $(function(){
     });
 
     $('#profile').click(function(){
-	location.href = '/profile';
+		location.href = '/profile';
     });
 
     $('#account').click(function(){
-	location.href = '/account';
+		location.href = '/account';
     });
 
+	$("#register-oldschool").click(function(){
+		$("#register-oldschool").attr("disabled", true);
+		$.ajax({
+			type: "POST",
+			url: "/register",
+			data: $('#register-form').serialize(),
+			success: function(msg){
+				alert(msg);
+				location.reload()
+			},
+			error: function(msg){
+				alert("Не удалось зарегистрироваться");
+			}
+		}).done(function() {
+			$("#register-oldschool").attr("disabled", false);
+		};
+	});
 });

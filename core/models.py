@@ -67,14 +67,14 @@ class Profession(List):
        verbose_name_plural = u'Профессии'
        
        
-#class Profile(models.Model):
-#    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=u'Пользователь')
-#    phone = models.CharField(max_length=30, verbose_name=u'Телефон')
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=u'Пользователь')
+    phone = models.CharField(max_length=30, verbose_name=u'Телефон')
 
-#	class Meta:
-#       db_table = 'profile'
-#       verbose_name = u'Профиль пользователя'
-#       verbose_name_plural = u'Профили пользователя'
+    class Meta:
+       db_table = 'profile'
+       verbose_name = u'Профиль пользователя'
+       verbose_name_plural = u'Профили пользователя'
        
        
        

@@ -1,7 +1,6 @@
 {% extends "main.html" %}
 {% block head %}
     <link href="/static/css/left.css" rel="stylesheet">
-
     <script src="/static/js/left.js"></script>
 {% endblock %}
 
@@ -39,7 +38,7 @@
                         {% endif %}
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:5 %}
+                {% if forloop.counter|divisibleby:4 %}
                     </div><div class="row">
                 {% endif %}
             {% endfor %}
