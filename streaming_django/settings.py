@@ -145,4 +145,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 MEDIA_URL = '/media/'
 
+AUTH_PROFILE_MODULE = 'core.Profile'
 #AUTH_USER_MODEL = 'core.User'

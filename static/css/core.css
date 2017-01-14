@@ -1,4 +1,4 @@
-register-modalhtml *
+html *
 {
     /* font-size: 16px; */
     font-weight: 700;
@@ -19,7 +19,7 @@ body {
 #video {
     display: block;
     margin: 0 auto;
-    width: 600px;
+    width: 620px;
 }
 
 #category-container {

@@ -40,6 +40,6 @@ $(function(){
 			}
 		}).done(function() {
 			$("#register-oldschool").attr("disabled", false);
-		};
+		});
 	});
 });

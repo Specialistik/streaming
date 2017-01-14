@@ -31,11 +31,12 @@ def register(request):
 	)
 	user.save()
 	
-	user_profile = Profile(user=user, phone=request.POST['phone'])
+	user_profile = user.get_profile()
+	user_profile.phone = request.POST['phone']
 	user_profile.save()
 	user = authenticate(username=request.POST['username'], password=request.POST['password'])
-	
-	if user_profile is not None:
+	if user is not None:
+		login(request, user)
 		return JsonResponse({'success': True})
 	else:
-		return JsonResponse({'success': False})
+		return JsonResponse({'success': False, 'message': 'Ошибка авторизации'})
