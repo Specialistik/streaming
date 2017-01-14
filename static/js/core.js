@@ -27,19 +27,13 @@ $(function(){
 
 	$("#register-oldschool").click(function(){
 		$("#register-oldschool").attr("disabled", true);
-		$.ajax({
-			type: "POST",
-			url: "/register",
-			data: $('#register-form').serialize(),
-			success: function(msg){
-				alert(msg);
-				location.reload()
-			},
-			error: function(msg){
-				alert("Не удалось зарегистрироваться");
+		$.post("/register", 
+			$('#register-form').serialize(),
+			function(data, status){
+				alert(data);
+				$("#register-oldschool").attr("disabled", false);
+				location.reload();
 			}
-		}).done(function() {
-			$("#register-oldschool").attr("disabled", false);
-		});
+		);
 	});
 });

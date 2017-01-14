@@ -2,7 +2,7 @@
 
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from models import Article, Profile
 
@@ -31,9 +31,9 @@ def register(request):
 	)
 	user.save()
 	
-	user_profile = user.get_profile()
-	user_profile.phone = request.POST['phone']
-	user_profile.save()
+	#user_profile = user.get_profile()
+	#user_profile.phone = request.POST['phone']
+	#user_profile.save()
 	user = authenticate(username=request.POST['username'], password=request.POST['password'])
 	if user is not None:
 		login(request, user)

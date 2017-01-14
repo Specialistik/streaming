@@ -53,20 +53,23 @@
     	<div class="modal-content">
       		<div class="modal-body login-modal">
       			<div id='social-icons-conatainer'>
-	        		<div class='modal-body-left'>
-	        			<div class="form-group">
-		              		<input type="text" id="username" placeholder="Ваша почта" value="" class="form-control login-field">
-		              		<i class="fa fa-user login-field-icon"></i>
-		            	</div>
+					<form id="login-form" method="POST">
+						{% csrf_token %}
+						<div class='modal-body-left'>
+							<div class="form-group">
+								<input type="text" id="username" placeholder="Ваша почта" value="" class="form-control login-field">
+								<i class="fa fa-user login-field-icon"></i>
+							</div>
 
-		            	<div class="form-group">
-		            	  	<input type="password" id="login-pass" placeholder="Пароль" value="" class="form-control login-field">
-		              		<i class="fa fa-lock login-field-icon"></i>
-		            	</div>
+							<div class="form-group">
+								<input type="password" id="login-pass" placeholder="Пароль" value="" class="form-control login-field">
+								<i class="fa fa-lock login-field-icon"></i>
+							</div>
 
-		            	<a href="#" class="btn btn-primary modal-login-btn">Войти</a>
-		            	<a href="#" class="login-link text-center">Забыли пароль?</a>
-	        		</div>
+							<button class="btn btn-primary modal-login-btn" type="submit" id="signin">Войти</button>
+							<a href="#" class="login-link text-center">Забыли пароль?</a>
+						</div>
+					</form>
 
 	        		<div class='modal-body-right'>
 	        			<div class="modal-social-icons">
@@ -118,7 +121,7 @@
 					</div>
 
 					<div class="form-group modal-register-btn">
-						<button class="btn btn-default" id="register-oldschool">Зарегистрироваться</button>
+						<button class="btn btn-default" type="submit" id="register-oldschool">Зарегистрироваться</button>
 					</div>
         		</form>
 			</div>
