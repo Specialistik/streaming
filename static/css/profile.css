@@ -4,11 +4,12 @@ h2 {
 }
 
 .profile-left img {
+	padding: 2px;
 	padding-bottom: 15px;
 }
 
 .profile-left input {
-	padding: 0;
+	padding: 2px;
 }
 
 .profile-left .btn {
@@ -21,4 +22,8 @@ h2 {
 
 .max-width {
 	width: 100%;
+}
+
+h2, h4 {
+	color: #FFF700;
 }

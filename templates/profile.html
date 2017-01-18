@@ -2,10 +2,12 @@
 
 {% block head %}
     <link href="/static/css/profile.css" rel="stylesheet">
+    
+    <script src="/static/js/angular/controller.js"></script>
 {% endblock %}
 
 {% block content %}
-    <div class="container">
+    <div class="container" ng-controller="profileController">
 		<div class="row">
 			<div class="profile-left col-xs-3">
 				<h2>Профиль</h2>
