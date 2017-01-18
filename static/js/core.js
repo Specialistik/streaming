@@ -9,8 +9,12 @@ $(function(){
         });
     });
 
-    $('#exit').click(function(){
-	    location.href = '/admin/logout';
+	$('#forgot-pass').click(function(){
+	    aleft('Вспоминайте :-)');
+    });
+
+    $('#logout').click(function(){
+	    location.href = '/logout';
     });
     
     $('#cabinet').click(function(){
@@ -33,6 +37,21 @@ $(function(){
 				alert(data);
 				$("#register-oldschool").attr("disabled", false);
 				location.reload();
+			}
+		);
+	});
+	
+	$("#signin").click(function(){
+		$("#signin").attr("disabled", true);
+		$.post("/signin", 
+			$('#login-form').serialize(),
+			function(data, status){
+				$("#signin").attr("disabled", false);
+				if (data.success === true) {
+					location.reload();
+				} else {
+					alert('Неверное имя пользователя или пароль');
+				}
 			}
 		);
 	});

@@ -25,6 +25,8 @@ urlpatterns = [
     url(r'^account$', core_views.account),
     url(r'^profile$', core_views.profile),
     url(r'^register$', core_views.register),
+    url(r'^signin$', core_views.signin),
+    url(r'^logout$', core_views.logout_view),
     url(r'^stream_creation$', streams_views.stream_creation),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

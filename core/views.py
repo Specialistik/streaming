@@ -2,9 +2,11 @@
 
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
+from django.shortcuts import redirect
 from models import Article, Profile
+
 
 
 def index(request):
@@ -21,6 +23,19 @@ def account(request):
 
 def profile(request):
     return render(request, 'profile.html')
+
+def signin(request):
+	user = authenticate(username=request.POST['username'], password=request.POST['password'])
+	if user is not None:
+		login(request, user)
+		return JsonResponse({'success': True})
+	else:
+		return JsonResponse({'success': False, 'message': 'Неверное имя пользователя или пароль'})
+
+
+def logout_view(request):
+	logout(request)
+	return redirect('/')
 
 
 def register(request):
@@ -40,3 +55,5 @@ def register(request):
 		return JsonResponse({'success': True})
 	else:
 		return JsonResponse({'success': False, 'message': 'Ошибка авторизации'})
+
+

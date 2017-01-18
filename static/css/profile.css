@@ -18,3 +18,7 @@ h2 {
 .profile-right h4 {
 	text-align: center;
 }
+
+.max-width {
+	width: 100%;
+}

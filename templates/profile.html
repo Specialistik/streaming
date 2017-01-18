@@ -5,10 +5,9 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Личный кабинет </h2>
     <div class="container">
 		<div class="row">
-			<div class="profile-left col-xs-4">
+			<div class="profile-left col-xs-3">
 				<h2>Профиль</h2>
 					<img src="/static/images/user-pic-default.jpg" class="img-responsive">
 					<div class="form-group">
@@ -28,11 +27,11 @@
 					</div>
 
 					<div class="form-group">
-						<button class="btn btn-default" type="submit" id="save-profile">Сохранить изменения</button>
+						<button class="btn btn-default max-width" type="submit" id="save-profile">Сохранить изменения</button>
 					</div>
 			</div>
 			
-			<div class="profile-right col-xs-7">
+			<div class="profile-right col-xs-8">
 				<h2>Статус</h2>
 				<div class="row">
 					<div class="col-xs-3">
@@ -53,6 +52,4 @@
 			</div>
 		</div>
     </div>	
-    {% autoescape off %}
-    {% endautoescape %}
 {% endblock %}
