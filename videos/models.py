@@ -50,12 +50,7 @@ class Video(Substance):
         return '/video/' + str(self.id) + '/' + self.url
 
     def get_thumb(self):
-        return '/static/images/ch1.jpg'
-
-#    def save(self, *args, **kw):
-#	if ((self.video.name.lower()[-4:] != '.mp4') or (self.video.name.lower()[-5:] != '.webm')):
-#	    raise Exception('wrong video format')
-#	super(Video, self).save(self, *args, **kw)
+        return '/static/images/no_thumbnail.jpg'
 
     class Meta:
         db_table = 'videos'

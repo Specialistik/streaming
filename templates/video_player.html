@@ -1,0 +1,17 @@
+{% verbatim %}
+	<div class="wrapper" ng-controller="videoController">
+		<video id="video" class="center-video" controls>
+			<source src="/static/video/suddenly.webm" type="video/webm">
+		</video>
+		<div class="jcarousel-wrapper">
+			<div class="jcarousel">
+				<ul>
+					<li ng-repeat="video_thumb in video_thumbnails"><img src="{{ video_thumb.thumb }}"></li>
+				</ul>
+			</div>
+
+			<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+			<a href="#" class="jcaroussel-control-next">&rsaquo;</a>
+		</div>
+	</div>
+{% endverbatim %}
