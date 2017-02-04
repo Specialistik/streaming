@@ -1,7 +1,7 @@
 #coding: utf-8
 
 from django.contrib import admin
-from videos.models import VideoCategory, Author, Video
+from videos.models import VideoCategory, Author, Video, History
 
 
 class VideoCategoryAdmin(admin.ModelAdmin):
@@ -25,4 +25,4 @@ class VideoAdmin(admin.ModelAdmin):
 admin.site.register(VideoCategory, VideoCategoryAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Video, VideoAdmin)
-
+admin.site.register(History)

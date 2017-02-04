@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-from core.models import Substance, Status
+from core.models import Substance, Status, Profile
 
 
 class VideoCategory(Substance):
@@ -56,3 +56,14 @@ class Video(Substance):
         db_table = 'videos'
         verbose_name = u'Видео'
         verbose_name_plural = u'Видео'
+
+
+class History(models.Model):
+	profile = models.ForeignKey(Author, editable=False, verbose_name=u"Пользьватель")
+	video = models.ForeignKey(Video, editable=False, verbose_name=u"Просмотренное видео")
+	time = models.DateTimeField(auto_now=True, editable=False, verbose_name=u"Время просмотра")
+
+	class Meta:
+		db_table = 'video_history'
+		verbose_name = u'Просмотр видео'
+		verbose_name_plural = u'Просмотры видео'
