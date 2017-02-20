@@ -15,6 +15,7 @@
 
     <div class="container">
     	<div class="row">
+			{% comment %} 
             {% for video_stream_set in video_stream_sets %}
                 <div class="col-xs-3 col-sm-3 pic-default stream">
                     <a href="{{ video_stream_set.active_stream }}">
@@ -26,6 +27,29 @@
                     </div><div class="row">
                 {% endif %}
             {% endfor %}
+            {% endcomment %}
+            
+		{% for video_stream_set in video_stream_sets %}
+			<div class="col-xs-3 cat-desc">
+				<div class="author-header">
+						<h2> {{ video_stream_set.title }} </h2>
+					<a href="{{ video_stream_set.active_stream }}">
+					<img src="/media/{{ video_stream_set.pic }}">
+				</a>
+			</div>
+						
+			<div class="author-description">
+				{% autoescape off %}
+					{{ video_stream_set.description }}
+				{% endautoescape %}
+			</div>
+						
+			</div>
+					
+			{% if forloop.counter|divisibleby:4 %}
+					</div><div class="row">
+			{% endif %}
+		{% endfor %}
         </div>
     </div>
 
