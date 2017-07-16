@@ -39,7 +39,7 @@ class List(models.Model):
         return self.name
 
     class Meta:
-        abstract=True
+        abstract = True
 
 
 class Article(Substance):
@@ -55,16 +55,16 @@ class Article(Substance):
 
 class Status(List):
     class Meta:
-       db_table = 'statuses'
-       verbose_name = u'Уровень доступа'
-       verbose_name_plural = u'Уровни доступа'
+        db_table = 'statuses'
+        verbose_name = u'Уровень доступа'
+        verbose_name_plural = u'Уровни доступа'
        
        
 class Profession(List):
     class Meta:
-       db_table = 'professions'
-       verbose_name = u'Профессия'
-       verbose_name_plural = u'Профессии'
+        db_table = 'professions'
+        verbose_name = u'Профессия'
+        verbose_name_plural = u'Профессии'
        
        
 class Profile(models.Model):
@@ -72,10 +72,6 @@ class Profile(models.Model):
     phone = models.CharField(max_length=30, verbose_name=u'Телефон')
 
     class Meta:
-       db_table = 'profile'
-       verbose_name = u'Профиль пользователя'
-       verbose_name_plural = u'Профили пользователя'
-       
-       
-       
- 
+        db_table = 'profile'
+        verbose_name = u'Профиль пользователя'
+        verbose_name_plural = u'Профили пользователя'

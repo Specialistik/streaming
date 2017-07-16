@@ -3,7 +3,7 @@ $(function(){
     var video = document.getElementById('video');
     //video.play();
 
-    $('.stream a').click(function(e){
+    $('.author-header a').click(function(e){
         e.preventDefault();
         video.setAttribute('src', $(this).attr('href'));
         video.play();

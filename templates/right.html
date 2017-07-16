@@ -1,5 +1,6 @@
 {% extends "main.html" %}
-{% block head %}    
+{% load thumbnail %}
+{% block head %}
     <link href="/static/css/jstyle.css" rel="stylesheet">
     <link href="/static/css/jcarousel.responsive.css" rel="stylesheet">
     <link href="/static/css/right.css" rel="stylesheet">
@@ -13,47 +14,52 @@
 {% block content %}
 	<div class="wrapper" ng-controller="videoController">
 		<video id="video" class="center-video" controls>
-			<source src="/static/video/suddenly.webm" type="video/webm">
+            <source src="/static/video/suddenly.webm" type="video/webm">
 		</video>
 	</div>
 
     <div class="container">
     	<div class="row">
-			{% comment %} 
+            {% comment %}
+                {% for video_stream_set in video_stream_sets %}
+                    <div class="col-xs-3 col-sm-3 pic-default stream">
+                        <a href="{{ video_stream_set.active_stream }}">
+                            <img src="/media/{{ video_stream_set.pic }}">
+                        </a>
+                    </div>
+
+                    {% if forloop.counter|divisibleby:4 %}
+                        </div><div class="row">
+                    {% endif %}
+                {% endfor %}
+            {% endcomment %}
+            
             {% for video_stream_set in video_stream_sets %}
-                <div class="col-xs-3 col-sm-3 pic-default stream">
-                    <a href="{{ video_stream_set.active_stream }}">
-                        <img src="/media/{{ video_stream_set.pic }}">
-                    </a>
+                <div class="col-xs-3 cat-desc">
+                    <div class="author-header">
+                        <h2> {{ video_stream_set.title }} </h2>
+                        <a href="{{ video_stream_set.active_stream }}">
+                            {% comment %}
+                            {% thumbnail video_stream_set.pic "200x300" crop="center" as th %}
+                                <img src="{{ th.url }}" width="{{ th.width }}" height="{{ th.height }}">
+                            {% endthumbnail %}
+                            {% endcomment %}
+
+                            <img src="{{ video_stream_set.pic.url }}" width="300" height="200">
+                        </a>
+                    </div>
+
+                    <div class="author-description">
+                        {% autoescape off %}
+                            {{ video_stream_set.description }}
+                        {% endautoescape %}
+                    </div>
                 </div>
-    
+
                 {% if forloop.counter|divisibleby:4 %}
                     </div><div class="row">
                 {% endif %}
             {% endfor %}
-            {% endcomment %}
-            
-		{% for video_stream_set in video_stream_sets %}
-			<div class="col-xs-3 cat-desc">
-				<div class="author-header">
-						<h2> {{ video_stream_set.title }} </h2>
-					<a href="{{ video_stream_set.active_stream }}">
-					<img src="/media/{{ video_stream_set.pic }}">
-				</a>
-			</div>
-						
-			<div class="author-description">
-				{% autoescape off %}
-					{{ video_stream_set.description }}
-				{% endautoescape %}
-			</div>
-						
-			</div>
-					
-			{% if forloop.counter|divisibleby:4 %}
-					</div><div class="row">
-			{% endif %}
-		{% endfor %}
         </div>
     </div>
 

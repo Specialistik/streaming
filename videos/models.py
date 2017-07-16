@@ -59,11 +59,11 @@ class Video(Substance):
 
 
 class History(models.Model):
-	profile = models.ForeignKey(Author, editable=False, verbose_name=u"Пользьватель")
-	video = models.ForeignKey(Video, editable=False, verbose_name=u"Просмотренное видео")
-	time = models.DateTimeField(auto_now=True, editable=False, verbose_name=u"Время просмотра")
+    profile = models.ForeignKey(Author, editable=False, verbose_name=u"Пользьватель")
+    video = models.ForeignKey(Video, editable=False, verbose_name=u"Просмотренное видео")
+    time = models.DateTimeField(auto_now=True, editable=False, verbose_name=u"Время просмотра")
 
-	class Meta:
-		db_table = 'video_history'
-		verbose_name = u'Просмотр видео'
-		verbose_name_plural = u'Просмотры видео'
+    class Meta:
+        db_table = 'video_history'
+        verbose_name = u'Просмотр видео'
+        verbose_name_plural = u'Просмотры видео'

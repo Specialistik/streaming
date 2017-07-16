@@ -4,18 +4,20 @@ from __future__ import unicode_literals
 
 from django.db import models
 from core.models import Substance
+from sorl.thumbnail import ImageField
+
 
 class VideoStreamSet(Substance):
-    pic = models.ImageField(upload_to='video_stream_set_pic', verbose_name=u"Картинка")
+    pic = ImageField(upload_to='video_stream_set_pic', verbose_name=u"Картинка")
 
     def children(self):
         return VideoStream.objects.filter(stream_set=self.id)
 
     def has_active_stream(self):
-	    return (VideoStream.objects.filter(stream_set=self.id, active=True).exists())
+        return VideoStream.objects.filter(stream_set=self.id, active=True).exists()
 
     def active_stream(self):
-	    return VideoStream.objects.get(stream_set=self.id, active=True).stream_source
+        return VideoStream.objects.get(stream_set=self.id, active=True).stream_source
 
     class Meta:
         db_table = 'video_stream_sets'

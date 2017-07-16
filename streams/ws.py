@@ -15,6 +15,7 @@ class IndexHandler(web.RequestHandler):
     def get(self):
         self.render('index.html')
 
+
 class SocketHandler(websocket.WebSocketHandler):
     def __init__(self, *args, **kwargs):
         super(SocketHandler, self).__init__(*args, **kwargs)

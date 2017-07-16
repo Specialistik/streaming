@@ -37,6 +37,5 @@
   }
 
   btnMedia.onclick = function () {
-    getUserMedia({"audio": false, "video": true}, Success, Failure);
+    getUserMedia({"audio": true, "video": true}, Success, Failure);
   }
-/
