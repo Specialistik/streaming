@@ -18,7 +18,7 @@
 		</video>
 	</div>
 
-    <div class="container">
+    <div class="container container-full">
     	<div class="row">
             {% comment %}
                 {% for video_stream_set in video_stream_sets %}
@@ -35,9 +35,9 @@
             {% endcomment %}
             
             {% for video_stream_set in video_stream_sets %}
-                <div class="col-xs-3 cat-desc">
+                <div class="col-xs-2 cat-desc">
                     <div class="author-header">
-                        <h2> {{ video_stream_set.title }} </h2>
+
                         <a href="{{ video_stream_set.active_stream }}">
                             {% comment %}
                             {% thumbnail video_stream_set.pic "200x300" crop="center" as th %}
@@ -45,16 +45,19 @@
                             {% endthumbnail %}
                             {% endcomment %}
 
-                            <img src="{{ video_stream_set.pic.url }}" width="300" height="200">
+                            <img src="{{ video_stream_set.pic.url }}" width="200" height="170">
                         </a>
                     </div>
-
+                    <h2> {{ video_stream_set.title }} </h2>
+                    {% comment %}
                     <div class="author-description">
                         {% autoescape off %}
                             {{ video_stream_set.description }}
                         {% endautoescape %}
                     </div>
+                    {% endcomment %}
                 </div>
+                <div class="col-xs-1 col-adjusting"></div>
 
                 {% if forloop.counter|divisibleby:4 %}
                     </div><div class="row">
