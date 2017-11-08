@@ -5,4 +5,4 @@ from core.models import Article, Profession, Status
 
 admin.site.register(Article)
 admin.site.register(Profession)
-#admin.site.register(Status)
+admin.site.register(Status)

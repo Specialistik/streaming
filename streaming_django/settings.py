@@ -90,9 +90,9 @@ WSGI_APPLICATION = 'streaming_django.wsgi.application'
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'streaming',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': '1f53601c',
         'HOST': 'localhost'
     }

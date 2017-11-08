@@ -26,3 +26,4 @@ admin.site.register(VideoCategory, VideoCategoryAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(History)
+
